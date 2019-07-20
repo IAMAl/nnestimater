@@ -1,0 +1,1377 @@
+1.Network Topology
+
+convolution Layer
+Total In  Channels :                     3
+Total Out Channels :                    96
+In  Activation     :        227,       227, 
+Out Activation     :         55,        55, 
+Param              :         11,        11, 
+Padding-0          :          0,         0
+Padding-1          :          0,         0
+Stride             :          4,         4,
+Total Inputs/Ch    :                 51529
+Total Params/Ch    :                   122
+Total Outputs/Ch   :                  3025
+
+batch_normalization Layer
+Total In  Channels :                    96
+Total Out Channels :                    96
+In  Activation     :         55,        55, 
+Out Activation     :         55,        55, 
+Param              :          0,         0, 
+Padding-0          :          0,         0
+Padding-1          :          0,         0
+Stride             :          1,         1,
+Total Inputs/Ch    :                  3025
+Total Params/Ch    :                     0
+Total Outputs/Ch   :                  3025
+
+max_pooling Layer
+Total In  Channels :                    96
+Total Out Channels :                    96
+In  Activation     :         55,        55, 
+Out Activation     :         27,        27, 
+Param              :          3,         3, 
+Padding-0          :          0,         0
+Padding-1          :          0,         0
+Stride             :          2,         2,
+Total Inputs/Ch    :                  3025
+Total Params/Ch    :                     0
+Total Outputs/Ch   :                   729
+
+convolution Layer
+Total In  Channels :                   256
+Total Out Channels :                   256
+In  Activation     :         27,        27, 
+Out Activation     :         13,        13, 
+Param              :          5,         5, 
+Padding-0          :          1,         1
+Padding-1          :          1,         1
+Stride             :          2,         2,
+Total Inputs/Ch    :                   729
+Total Params/Ch    :                    26
+Total Outputs/Ch   :                   169
+
+batch_normalization Layer
+Total In  Channels :                   256
+Total Out Channels :                   256
+In  Activation     :         13,        13, 
+Out Activation     :         13,        13, 
+Param              :          0,         0, 
+Padding-0          :          0,         0
+Padding-1          :          0,         0
+Stride             :          1,         1,
+Total Inputs/Ch    :                   169
+Total Params/Ch    :                     0
+Total Outputs/Ch   :                   169
+
+max_pooling Layer
+Total In  Channels :                   256
+Total Out Channels :                   256
+In  Activation     :         13,        13, 
+Out Activation     :          6,         6, 
+Param              :          3,         3, 
+Padding-0          :          0,         0
+Padding-1          :          0,         0
+Stride             :          2,         2,
+Total Inputs/Ch    :                   169
+Total Params/Ch    :                     0
+Total Outputs/Ch   :                    36
+
+convolution Layer
+Total In  Channels :                   384
+Total Out Channels :                   384
+In  Activation     :         13,        13, 
+Out Activation     :         13,        13, 
+Param              :          3,         3, 
+Padding-0          :          1,         1
+Padding-1          :          1,         1
+Stride             :          1,         1,
+Total Inputs/Ch    :                   169
+Total Params/Ch    :                    10
+Total Outputs/Ch   :                   169
+
+convolution Layer
+Total In  Channels :                   384
+Total Out Channels :                   384
+In  Activation     :         13,        13, 
+Out Activation     :         13,        13, 
+Param              :          3,         3, 
+Padding-0          :          1,         1
+Padding-1          :          1,         1
+Stride             :          1,         1,
+Total Inputs/Ch    :                   169
+Total Params/Ch    :                    10
+Total Outputs/Ch   :                   169
+
+convolution Layer
+Total In  Channels :                   256
+Total Out Channels :                   256
+In  Activation     :         13,        13, 
+Out Activation     :         13,        13, 
+Param              :          3,         3, 
+Padding-0          :          1,         1
+Padding-1          :          1,         1
+Stride             :          1,         1,
+Total Inputs/Ch    :                   169
+Total Params/Ch    :                    10
+Total Outputs/Ch   :                   169
+
+max_pooling Layer
+Total In  Channels :                   256
+Total Out Channels :                   256
+In  Activation     :         13,        13, 
+Out Activation     :          6,         6, 
+Param              :          5,         5, 
+Padding-0          :          1,         1
+Padding-1          :          1,         1
+Stride             :          2,         2,
+Total Inputs/Ch    :                   169
+Total Params/Ch    :                     0
+Total Outputs/Ch   :                    36
+
+full_connection Layer
+Total In  Channels :                     1
+Total Out Channels :                     1
+In  Activation     :                  9216
+Out Activation     :                  4096
+Param              :              37748737
+Padding-0          :          0,         0
+Padding-1          :          0,         0
+Stride             :          1,         1,
+Total Inputs/Ch    :                  9216
+Total Params/Ch    :              37748737
+Total Outputs/Ch   :                  4096
+
+full_connection Layer
+Total In  Channels :                     1
+Total Out Channels :                     1
+In  Activation     :                  4096
+Out Activation     :                  4096
+Param              :              16777217
+Padding-0          :          0,         0
+Padding-1          :          0,         0
+Stride             :          1,         1,
+Total Inputs/Ch    :                  4096
+Total Params/Ch    :              16777217
+Total Outputs/Ch   :                  4096
+
+full_connection Layer
+Total In  Channels :                     1
+Total Out Channels :                     1
+In  Activation     :                  4096
+Out Activation     :                  1000
+Param              :               4096001
+Padding-0          :          0,         0
+Padding-1          :          0,         0
+Stride             :          1,         1,
+Total Inputs/Ch    :                  4096
+Total Params/Ch    :               4096001
+Total Outputs/Ch   :                  1000
+
+
+
+2.Statistics for Layers
+Layer1: convolution
+Operations
+Number of Data Loads      :              39574272 [ops]
+Number of Param Loads     :             301923840 [ops]
+Number of Stores          :               2323200 [ops]
+Number of Multiplications :              35138400 [ops]
+Number of Additions       :              62726400 [ops]
+Number of Divisions       :                     0 [ops]
+Number of Activations     :                290400 [ops]
+Number of Arithmetics     :              98155200 [ops]
+
+Operations per Cycle
+Multiplications           :  0.028796790187545045	[ops/cycle]
+Additions                 :  0.051405840334791154	[ops/cycle]
+Divisions                 :  0.000000000000000000	[ops/cycle]
+Activations               :  0.000237990001549959	[ops/cycle]
+Arithmetics               :  0.080440620523886161	[ops/cycle]
+
+Execution Cycles
+Data Load                 :             133563168 [cycles]
+Param Load                :            1018992960 [cycles]
+Data Store                :               4646400 [cycles]
+Multiplication            :              35138400 [cycles]
+Addition                  :              62726400 [cycles]
+Division                  :                     0 [cycles]
+Activation                :                290400 [cycles]
+Arithmetic                :              63016801 [cycles]
+Total                     :            1220219329 [cycles]
+
+Execution Cycles Breakdown
+Data Load                 :  10.945832837237411184	[%]
+Param Load                :  83.509000044696051646	[%]
+Data Store                :  0.380784002479934491	[%]
+Multiplication            :  2.879679018754504494	[%]
+Addition                  :  5.140584033479115078	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.023799000154995906	[%]
+Arithmetic                :  5.164383115586590911	[%]
+
+Execution Time
+Data Load                 :  333.907919999999990068	[msec]
+Param Load                :  2547.482399999999870488	[msec]
+Data Store                :  11.615999999999999659	[msec]
+Multiplication            :  87.846000000000003638	[msec]
+Addition                  :  156.816000000000002501	[msec]
+Division                  :  0.000000000000000000	[msec]
+Activation                :  0.725999999999999979	[msec]
+Arithmetic                :  157.542002499999995280	[msec]
+Total                     :  3050.548322500000267610	[msec]
+
+Execution Time Breakdown
+Data Load                 :  10.945832837237409407	[%]
+Param Load                :  83.509000044696065856	[%]
+Data Store                :  0.380784002479934491	[%]
+Multiplication            :  2.879679018754504494	[%]
+Addition                  :  5.140584033479115078	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.023799000154995906	[%]
+Arithmetic                :  5.164383115586590911	[%]
+Total                     :  100.000000000000000000	[%]
+
+Energy Consumption
+Energy on Data Load       :  0.000000070053330158	[mJ]
+Energy on Param Load      :  0.000000534457600286	[mJ]
+Energy on Data Store      :  0.000000002437017616	[mJ]
+Energy on Multipliers     :  0.000000000089270050	[mJ]
+Energy on Adders          :  0.000000000005140584	[mJ]
+Energy on Dividers        :  0.000000000000000000	[mJ]
+Energy on Activations     :  0.000000000000002380	[mJ]
+Total Energy              :  0.000000607042361074	[mJ]
+
+Energy Breakdown
+Data Load                 :  11.540105707681799885	[%]
+Param Load                :  88.042883752080300042	[%]
+Data Store                :  0.401457587170833796	[%]
+Multipliers               :  0.014705736420681619	[%]
+Adders                    :  0.000846824597938478	[%]
+Dividers                  :  0.000000000000000000	[%]
+Activations               :  0.000000392048424972	[%]
+
+Total Power Consumption   :  0.242816944429504272	[W]
+Operations per Second     :  32176248.209554463624954224	[ops/second]
+Power-Efficiency          :  0.132512367640372886	[GOPS/W]
+
+
+Layer2: batch_normalization
+Operations
+Number of Data Loads      :                 24200 [ops]
+Number of Param Loads     :                     0 [ops]
+Number of Stores          :                 24200 [ops]
+Number of Multiplications :                     0 [ops]
+Number of Additions       :                287375 [ops]
+Number of Divisions       :                  3025 [ops]
+Number of Activations     :                     0 [ops]
+Number of Arithmetics     :                290400 [ops]
+
+Operations per Cycle
+Multiplications           :  0.000000000000000000	[ops/cycle]
+Additions                 :  0.558801796721566491	[ops/cycle]
+Divisions                 :  0.005882124176016489	[ops/cycle]
+Activations               :  0.000000000000000000	[ops/cycle]
+Arithmetics               :  0.564683920897583014	[ops/cycle]
+
+Execution Cycles
+Data Load                 :                 81694 [cycles]
+Param Load                :                     0 [cycles]
+Data Store                :                 48400 [cycles]
+Multiplication            :                     0 [cycles]
+Addition                  :                287375 [cycles]
+Division                  :                 96800 [cycles]
+Activation                :                     0 [cycles]
+Arithmetic                :                384176 [cycles]
+Total                     :                514270 [cycles]
+
+Execution Cycles Breakdown
+Data Load                 :  15.885429832578218168	[%]
+Param Load                :  0.000000000000000000	[%]
+Data Store                :  9.411398681626383933	[%]
+Multiplication            :  0.000000000000000000	[%]
+Addition                  :  55.880179672156650383	[%]
+Division                  :  18.822797363252767866	[%]
+Activation                :  0.000000000000000000	[%]
+Arithmetic                :  74.703171485795394346	[%]
+
+Execution Time
+Data Load                 :  0.204235000000000000	[msec]
+Param Load                :  0.000000000000000000	[msec]
+Data Store                :  0.120999999999999996	[msec]
+Multiplication            :  0.000000000000000000	[msec]
+Addition                  :  0.718437499999999951	[msec]
+Division                  :  0.241999999999999993	[msec]
+Activation                :  0.000000000000000000	[msec]
+Arithmetic                :  0.960439999999999960	[msec]
+Total                     :  1.285674999999999901	[msec]
+
+Execution Time Breakdown
+Data Load                 :  15.885429832578218168	[%]
+Param Load                :  0.000000000000000000	[%]
+Data Store                :  9.411398681626382157	[%]
+Multiplication            :  0.000000000000000000	[%]
+Addition                  :  55.880179672156650383	[%]
+Division                  :  18.822797363252764313	[%]
+Activation                :  0.000000000000000000	[%]
+Arithmetic                :  74.703171485795408557	[%]
+Total                     :  100.000000000000000000	[%]
+
+Energy Consumption
+Energy on Data Load       :  0.000000101666750929	[mJ]
+Energy on Param Load      :  0.000000000000000000	[mJ]
+Energy on Data Store      :  0.000000060232951562	[mJ]
+Energy on Multipliers     :  0.000000000000000000	[mJ]
+Energy on Adders          :  0.000000000055880180	[mJ]
+Energy on Dividers        :  0.000000000941139868	[mJ]
+Energy on Activations     :  0.000000000000000000	[mJ]
+Total Energy              :  0.000000162896722539	[mJ]
+
+Energy Breakdown
+Data Load                 :  62.411784193091804696	[%]
+Param Load                :  0.000000000000000000	[%]
+Data Store                :  36.976159264396933679	[%]
+Multipliers               :  0.000000000000000000	[%]
+Adders                    :  0.034304054005055755	[%]
+Dividers                  :  0.577752488506202089	[%]
+Activations               :  0.000000000000000000	[%]
+
+Total Power Consumption   :  0.065158689015497692	[W]
+Operations per Second     :  225873568.359033197164535522	[ops/second]
+Power-Efficiency          :  3.466514931037213199	[GOPS/W]
+
+
+Layer3: max_pooling
+Operations
+Number of Data Loads      :               2323200 [ops]
+Number of Param Loads     :                     0 [ops]
+Number of Stores          :                559872 [ops]
+Number of Multiplications :                     0 [ops]
+Number of Additions       :                559872 [ops]
+Number of Divisions       :                     0 [ops]
+Number of Activations     :                     0 [ops]
+Number of Arithmetics     :                559872 [ops]
+
+Operations per Cycle
+Multiplications           :  0.000000000000000000	[ops/cycle]
+Additions                 :  0.058807508116503718	[ops/cycle]
+Divisions                 :  0.000000000000000000	[ops/cycle]
+Activations               :  0.000000000000000000	[ops/cycle]
+Arithmetics               :  0.058807508116503718	[ops/cycle]
+
+Execution Cycles
+Data Load                 :               7840800 [cycles]
+Param Load                :                     0 [cycles]
+Data Store                :               1119744 [cycles]
+Multiplication            :                     0 [cycles]
+Addition                  :                559872 [cycles]
+Division                  :                     0 [cycles]
+Activation                :                     0 [cycles]
+Arithmetic                :                559873 [cycles]
+Total                     :               9520417 [cycles]
+
+Execution Cycles Breakdown
+Data Load                 :  82.357737061307290105	[%]
+Param Load                :  0.000000000000000000	[%]
+Data Store                :  11.761501623300743447	[%]
+Multiplication            :  0.000000000000000000	[%]
+Addition                  :  5.880750811650371723	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.000000000000000000	[%]
+Arithmetic                :  5.880761315391962007	[%]
+
+Execution Time
+Data Load                 :  19.602000000000000313	[msec]
+Param Load                :  0.000000000000000000	[msec]
+Data Store                :  2.799360000000000070	[msec]
+Multiplication            :  0.000000000000000000	[msec]
+Addition                  :  1.399680000000000035	[msec]
+Division                  :  0.000000000000000000	[msec]
+Activation                :  0.000000000000000000	[msec]
+Arithmetic                :  1.399682499999999941	[msec]
+Total                     :  23.801042500000001212	[msec]
+
+Execution Time Breakdown
+Data Load                 :  82.357737061307290105	[%]
+Param Load                :  0.000000000000000000	[%]
+Data Store                :  11.761501623300743447	[%]
+Multiplication            :  0.000000000000000000	[%]
+Addition                  :  5.880750811650371723	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.000000000000000000	[%]
+Arithmetic                :  5.880761315391962007	[%]
+Total                     :  100.000000000000000000	[%]
+
+Energy Consumption
+Energy on Data Load       :  0.000000527089517192	[mJ]
+Energy on Param Load      :  0.000000000000000000	[mJ]
+Energy on Data Store      :  0.000000075273610389	[mJ]
+Energy on Multipliers     :  0.000000000000000000	[mJ]
+Energy on Adders          :  0.000000000005880751	[mJ]
+Energy on Dividers        :  0.000000000000000000	[mJ]
+Energy on Activations     :  0.000000000000000000	[mJ]
+Total Energy              :  0.000000602369008332	[mJ]
+
+Energy Breakdown
+Data Load                 :  87.502761579923841850	[%]
+Param Load                :  0.000000000000000000	[%]
+Data Store                :  12.496262149595734670	[%]
+Multipliers               :  0.000000000000000000	[%]
+Adders                    :  0.000976270480437167	[%]
+Dividers                  :  0.000000000000000000	[%]
+Activations               :  0.000000000000000000	[%]
+
+Total Power Consumption   :  0.240947603332921201	[W]
+Operations per Second     :  23523003.246601488441228867	[ops/second]
+Power-Efficiency          :  0.097627048043716677	[GOPS/W]
+
+
+Layer4: convolution
+Operations
+Number of Data Loads      :               1492992 [ops]
+Number of Param Loads     :              10037248 [ops]
+Number of Stores          :                346112 [ops]
+Number of Multiplications :               1081600 [ops]
+Number of Additions       :              12113920 [ops]
+Number of Divisions       :                     0 [ops]
+Number of Activations     :                 43264 [ops]
+Number of Arithmetics     :              13238784 [ops]
+
+Operations per Cycle
+Multiplications           :  0.020894842897382925	[ops/cycle]
+Additions                 :  0.234022240450688784	[ops/cycle]
+Divisions                 :  0.000000000000000000	[ops/cycle]
+Activations               :  0.000835793715895317	[ops/cycle]
+Arithmetics               :  0.255752877063967043	[ops/cycle]
+
+Execution Cycles
+Data Load                 :               5038848 [cycles]
+Param Load                :              33875712 [cycles]
+Data Store                :                692224 [cycles]
+Multiplication            :               1081600 [cycles]
+Addition                  :              12113920 [cycles]
+Division                  :                     0 [cycles]
+Activation                :                 43264 [cycles]
+Arithmetic                :              12157185 [cycles]
+Total                     :              51763969 [cycles]
+
+Execution Cycles Breakdown
+Data Load                 :  9.734276751460074095	[%]
+Param Load                :  65.442647954603330618	[%]
+Data Store                :  1.337269945432507212	[%]
+Multiplication            :  2.089484289738292588	[%]
+Addition                  :  23.402224045068876990	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.083579371589531701	[%]
+Arithmetic                :  23.485805348504090517	[%]
+
+Execution Time
+Data Load                 :  12.597120000000000317	[msec]
+Param Load                :  84.689279999999996562	[msec]
+Data Store                :  1.730560000000000098	[msec]
+Multiplication            :  2.704000000000000181	[msec]
+Addition                  :  30.284800000000000608	[msec]
+Division                  :  0.000000000000000000	[msec]
+Activation                :  0.108160000000000006	[msec]
+Arithmetic                :  30.392962499999999437	[msec]
+Total                     :  129.409922499999993306	[msec]
+
+Execution Time Breakdown
+Data Load                 :  9.734276751460074095	[%]
+Param Load                :  65.442647954603330618	[%]
+Data Store                :  1.337269945432507212	[%]
+Multiplication            :  2.089484289738292588	[%]
+Addition                  :  23.402224045068880542	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.083579371589531701	[%]
+Arithmetic                :  23.485805348504094070	[%]
+Total                     :  100.000000000000000000	[%]
+
+Energy Consumption
+Energy on Data Load       :  0.000000062299371209	[mJ]
+Energy on Param Load      :  0.000000418832946909	[mJ]
+Energy on Data Store      :  0.000000008558527651	[mJ]
+Energy on Multipliers     :  0.000000000064774013	[mJ]
+Energy on Adders          :  0.000000000023402224	[mJ]
+Energy on Dividers        :  0.000000000000000000	[mJ]
+Energy on Activations     :  0.000000000000008358	[mJ]
+Total Energy              :  0.000000489779030365	[mJ]
+
+Energy Breakdown
+Data Load                 :  12.719893533003165942	[%]
+Param Load                :  85.514675178667374666	[%]
+Data Store                :  1.747426312718617814	[%]
+Multipliers               :  0.013225150315985637	[%]
+Adders                    :  0.004778118823839972	[%]
+Dividers                  :  0.000000000000000000	[%]
+Activations               :  0.000001706471008514	[%]
+
+Total Power Consumption   :  0.195911612145815178	[W]
+Operations per Second     :  102301150.825586810708045959	[ops/second]
+Power-Efficiency          :  0.522180128605368332	[GOPS/W]
+
+
+Layer5: batch_normalization
+Operations
+Number of Data Loads      :                  1352 [ops]
+Number of Param Loads     :                     0 [ops]
+Number of Stores          :                  1352 [ops]
+Number of Multiplications :                     0 [ops]
+Number of Additions       :                 43095 [ops]
+Number of Divisions       :                   169 [ops]
+Number of Activations     :                     0 [ops]
+Number of Arithmetics     :                 43264 [ops]
+
+Operations per Cycle
+Multiplications           :  0.000000000000000000	[ops/cycle]
+Additions                 :  0.772450259903208480	[ops/cycle]
+Divisions                 :  0.003029216705502778	[ops/cycle]
+Activations               :  0.000000000000000000	[ops/cycle]
+Arithmetics               :  0.775479476608711304	[ops/cycle]
+
+Execution Cycles
+Data Load                 :                  4582 [cycles]
+Param Load                :                     0 [cycles]
+Data Store                :                  2704 [cycles]
+Multiplication            :                     0 [cycles]
+Addition                  :                 43095 [cycles]
+Division                  :                  5408 [cycles]
+Activation                :                     0 [cycles]
+Arithmetic                :                 48504 [cycles]
+Total                     :                 55790 [cycles]
+
+Execution Cycles Breakdown
+Data Load                 :  8.212941387345402688	[%]
+Param Load                :  0.000000000000000000	[%]
+Data Store                :  4.846746728804444793	[%]
+Multiplication            :  0.000000000000000000	[%]
+Addition                  :  77.245025990320854703	[%]
+Division                  :  9.693493457608889585	[%]
+Activation                :  0.000000000000000000	[%]
+Arithmetic                :  86.940311883850156960	[%]
+
+Execution Time
+Data Load                 :  0.011455000000000000	[msec]
+Param Load                :  0.000000000000000000	[msec]
+Data Store                :  0.006760000000000000	[msec]
+Multiplication            :  0.000000000000000000	[msec]
+Addition                  :  0.107737500000000000	[msec]
+Division                  :  0.013520000000000001	[msec]
+Activation                :  0.000000000000000000	[msec]
+Arithmetic                :  0.121260000000000007	[msec]
+Total                     :  0.139474999999999988	[msec]
+
+Execution Time Breakdown
+Data Load                 :  8.212941387345402688	[%]
+Param Load                :  0.000000000000000000	[%]
+Data Store                :  4.846746728804445681	[%]
+Multiplication            :  0.000000000000000000	[%]
+Addition                  :  77.245025990320854703	[%]
+Division                  :  9.693493457608891362	[%]
+Activation                :  0.000000000000000000	[%]
+Arithmetic                :  86.940311883850156960	[%]
+Total                     :  100.000000000000000000	[%]
+
+Energy Consumption
+Energy on Data Load       :  0.000000052562824879	[mJ]
+Energy on Param Load      :  0.000000000000000000	[mJ]
+Energy on Data Store      :  0.000000031019179064	[mJ]
+Energy on Multipliers     :  0.000000000000000000	[mJ]
+Energy on Adders          :  0.000000000077245026	[mJ]
+Energy on Dividers        :  0.000000000484674673	[mJ]
+Energy on Activations     :  0.000000000000000000	[mJ]
+Total Energy              :  0.000000084143923642	[mJ]
+
+Energy Breakdown
+Data Load                 :  62.467760717341427323	[%]
+Param Load                :  0.000000000000000000	[%]
+Data Store                :  36.864431466541070392	[%]
+Multipliers               :  0.000000000000000000	[%]
+Adders                    :  0.091801074452812256	[%]
+Dividers                  :  0.576006741664704225	[%]
+Activations               :  0.000000000000000000	[%]
+
+Total Power Consumption   :  0.033657569456891911	[W]
+Operations per Second     :  310191790.643484532833099365	[ops/second]
+Power-Efficiency          :  9.216107866635269374	[GOPS/W]
+
+
+Layer6: max_pooling
+Operations
+Number of Data Loads      :                346112 [ops]
+Number of Param Loads     :                     0 [ops]
+Number of Stores          :                 73728 [ops]
+Number of Multiplications :                     0 [ops]
+Number of Additions       :                 73728 [ops]
+Number of Divisions       :                     0 [ops]
+Number of Activations     :                     0 [ops]
+Number of Arithmetics     :                 73728 [ops]
+
+Operations per Cycle
+Multiplications           :  0.000000000000000000	[ops/cycle]
+Additions                 :  0.053067955169209528	[ops/cycle]
+Divisions                 :  0.000000000000000000	[ops/cycle]
+Activations               :  0.000000000000000000	[ops/cycle]
+Arithmetics               :  0.053067955169209528	[ops/cycle]
+
+Execution Cycles
+Data Load                 :               1168128 [cycles]
+Param Load                :                     0 [cycles]
+Data Store                :                147456 [cycles]
+Multiplication            :                     0 [cycles]
+Addition                  :                 73728 [cycles]
+Division                  :                     0 [cycles]
+Activation                :                     0 [cycles]
+Arithmetic                :                 73729 [cycles]
+Total                     :               1389313 [cycles]
+
+Execution Cycles Breakdown
+Data Load                 :  84.079541471216344917	[%]
+Param Load                :  0.000000000000000000	[%]
+Data Store                :  10.613591033841904832	[%]
+Multiplication            :  0.000000000000000000	[%]
+Addition                  :  5.306795516920952416	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.000000000000000000	[%]
+Arithmetic                :  5.306867494941744035	[%]
+
+Execution Time
+Data Load                 :  2.920319999999999805	[msec]
+Param Load                :  0.000000000000000000	[msec]
+Data Store                :  0.368640000000000023	[msec]
+Multiplication            :  0.000000000000000000	[msec]
+Addition                  :  0.184320000000000012	[msec]
+Division                  :  0.000000000000000000	[msec]
+Activation                :  0.000000000000000000	[msec]
+Arithmetic                :  0.184322500000000000	[msec]
+Total                     :  3.473282499999999828	[msec]
+
+Execution Time Breakdown
+Data Load                 :  84.079541471216359128	[%]
+Param Load                :  0.000000000000000000	[%]
+Data Store                :  10.613591033841906608	[%]
+Multiplication            :  0.000000000000000000	[%]
+Addition                  :  5.306795516920953304	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.000000000000000000	[%]
+Arithmetic                :  5.306867494941744923	[%]
+Total                     :  100.000000000000000000	[%]
+
+Energy Consumption
+Energy on Data Load       :  0.000000538109065416	[mJ]
+Energy on Param Load      :  0.000000000000000000	[mJ]
+Energy on Data Store      :  0.000000067926982617	[mJ]
+Energy on Multipliers     :  0.000000000000000000	[mJ]
+Energy on Adders          :  0.000000000005306796	[mJ]
+Energy on Dividers        :  0.000000000000000000	[mJ]
+Energy on Activations     :  0.000000000000000000	[mJ]
+Total Energy              :  0.000000606041354828	[mJ]
+
+Energy Breakdown
+Data Load                 :  88.790816192502703075	[%]
+Param Load                :  0.000000000000000000	[%]
+Data Store                :  11.208308158422429557	[%]
+Multipliers               :  0.000000000000000000	[%]
+Adders                    :  0.000875649074876752	[%]
+Dividers                  :  0.000000000000000000	[%]
+Activations               :  0.000000000000000000	[%]
+
+Total Power Consumption   :  0.242416541931155888	[W]
+Operations per Second     :  21227182.067683812230825424	[ops/second]
+Power-Efficiency          :  0.087564907487675245	[GOPS/W]
+
+
+Layer7: convolution
+Operations
+Number of Data Loads      :                519168 [ops]
+Number of Param Loads     :               4675584 [ops]
+Number of Stores          :                519168 [ops]
+Number of Multiplications :                584064 [ops]
+Number of Additions       :              25439232 [ops]
+Number of Divisions       :                     0 [ops]
+Number of Activations     :                 64896 [ops]
+Number of Arithmetics     :              26088192 [ops]
+
+Operations per Cycle
+Multiplications           :  0.013251668137538967	[ops/cycle]
+Additions                 :  0.577183767768363887	[ops/cycle]
+Divisions                 :  0.000000000000000000	[ops/cycle]
+Activations               :  0.001472407570837663	[ops/cycle]
+Arithmetics               :  0.591907843476740525	[ops/cycle]
+
+Execution Cycles
+Data Load                 :               1752192 [cycles]
+Param Load                :              15780096 [cycles]
+Data Store                :               1038336 [cycles]
+Multiplication            :                584064 [cycles]
+Addition                  :              25439232 [cycles]
+Division                  :                     0 [cycles]
+Activation                :                 64896 [cycles]
+Arithmetic                :              25504129 [cycles]
+Total                     :              44074753 [cycles]
+
+Execution Cycles Breakdown
+Data Load                 :  3.975500441261690110	[%]
+Param Load                :  35.803027642605279368	[%]
+Data Store                :  2.355852113340260789	[%]
+Multiplication            :  1.325166813753896777	[%]
+Addition                  :  57.718376776836386455	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.147240757083766299	[%]
+Arithmetic                :  57.865619802792764403	[%]
+
+Execution Time
+Data Load                 :  4.380480000000000373	[msec]
+Param Load                :  39.450240000000000862	[msec]
+Data Store                :  2.595839999999999925	[msec]
+Multiplication            :  1.460159999999999902	[msec]
+Addition                  :  63.598080000000003054	[msec]
+Division                  :  0.000000000000000000	[msec]
+Activation                :  0.162239999999999995	[msec]
+Arithmetic                :  63.760322500000000900	[msec]
+Total                     :  110.186882499999995844	[msec]
+
+Execution Time Breakdown
+Data Load                 :  3.975500441261690110	[%]
+Param Load                :  35.803027642605279368	[%]
+Data Store                :  2.355852113340260789	[%]
+Multiplication            :  1.325166813753896777	[%]
+Addition                  :  57.718376776836393560	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.147240757083766299	[%]
+Arithmetic                :  57.865619802792764403	[%]
+Total                     :  100.000000000000000000	[%]
+
+Energy Consumption
+Energy on Data Load       :  0.000000025443202824	[mJ]
+Energy on Param Load      :  0.000000229139376913	[mJ]
+Energy on Data Store      :  0.000000015077453525	[mJ]
+Energy on Multipliers     :  0.000000000041080171	[mJ]
+Energy on Adders          :  0.000000000057718377	[mJ]
+Energy on Dividers        :  0.000000000000000000	[mJ]
+Energy on Activations     :  0.000000000000014724	[mJ]
+Total Energy              :  0.000000269758846534	[mJ]
+
+Energy Breakdown
+Data Load                 :  9.431832598249430433	[%]
+Param Load                :  84.942303044589536398	[%]
+Data Store                :  5.589234132295958446	[%]
+Multipliers               :  0.015228479715923560	[%]
+Adders                    :  0.021396286912695468	[%]
+Dividers                  :  0.000000000000000000	[%]
+Activations               :  0.000005458236457320	[%]
+
+Total Power Consumption   :  0.107903538613682071	[W]
+Operations per Second     :  236763137.390696197748184204	[ops/second]
+Power-Efficiency          :  2.194211055842749225	[GOPS/W]
+
+
+Layer8: convolution
+Operations
+Number of Data Loads      :                519168 [ops]
+Number of Param Loads     :               4675584 [ops]
+Number of Stores          :                519168 [ops]
+Number of Multiplications :                584064 [ops]
+Number of Additions       :              25439232 [ops]
+Number of Divisions       :                     0 [ops]
+Number of Activations     :                 64896 [ops]
+Number of Arithmetics     :              26088192 [ops]
+
+Operations per Cycle
+Multiplications           :  0.013251668137538967	[ops/cycle]
+Additions                 :  0.577183767768363887	[ops/cycle]
+Divisions                 :  0.000000000000000000	[ops/cycle]
+Activations               :  0.001472407570837663	[ops/cycle]
+Arithmetics               :  0.591907843476740525	[ops/cycle]
+
+Execution Cycles
+Data Load                 :               1752192 [cycles]
+Param Load                :              15780096 [cycles]
+Data Store                :               1038336 [cycles]
+Multiplication            :                584064 [cycles]
+Addition                  :              25439232 [cycles]
+Division                  :                     0 [cycles]
+Activation                :                 64896 [cycles]
+Arithmetic                :              25504129 [cycles]
+Total                     :              44074753 [cycles]
+
+Execution Cycles Breakdown
+Data Load                 :  3.975500441261690110	[%]
+Param Load                :  35.803027642605279368	[%]
+Data Store                :  2.355852113340260789	[%]
+Multiplication            :  1.325166813753896777	[%]
+Addition                  :  57.718376776836386455	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.147240757083766299	[%]
+Arithmetic                :  57.865619802792764403	[%]
+
+Execution Time
+Data Load                 :  4.380480000000000373	[msec]
+Param Load                :  39.450240000000000862	[msec]
+Data Store                :  2.595839999999999925	[msec]
+Multiplication            :  1.460159999999999902	[msec]
+Addition                  :  63.598080000000003054	[msec]
+Division                  :  0.000000000000000000	[msec]
+Activation                :  0.162239999999999995	[msec]
+Arithmetic                :  63.760322500000000900	[msec]
+Total                     :  110.186882499999995844	[msec]
+
+Execution Time Breakdown
+Data Load                 :  3.975500441261690110	[%]
+Param Load                :  35.803027642605279368	[%]
+Data Store                :  2.355852113340260789	[%]
+Multiplication            :  1.325166813753896777	[%]
+Addition                  :  57.718376776836393560	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.147240757083766299	[%]
+Arithmetic                :  57.865619802792764403	[%]
+Total                     :  100.000000000000000000	[%]
+
+Energy Consumption
+Energy on Data Load       :  0.000000025443202824	[mJ]
+Energy on Param Load      :  0.000000229139376913	[mJ]
+Energy on Data Store      :  0.000000015077453525	[mJ]
+Energy on Multipliers     :  0.000000000041080171	[mJ]
+Energy on Adders          :  0.000000000057718377	[mJ]
+Energy on Dividers        :  0.000000000000000000	[mJ]
+Energy on Activations     :  0.000000000000014724	[mJ]
+Total Energy              :  0.000000269758846534	[mJ]
+
+Energy Breakdown
+Data Load                 :  9.431832598249430433	[%]
+Param Load                :  84.942303044589536398	[%]
+Data Store                :  5.589234132295958446	[%]
+Multipliers               :  0.015228479715923560	[%]
+Adders                    :  0.021396286912695468	[%]
+Dividers                  :  0.000000000000000000	[%]
+Activations               :  0.000005458236457320	[%]
+
+Total Power Consumption   :  0.107903538613682071	[W]
+Operations per Second     :  236763137.390696197748184204	[ops/second]
+Power-Efficiency          :  2.194211055842749225	[GOPS/W]
+
+
+Layer9: convolution
+Operations
+Number of Data Loads      :                346112 [ops]
+Number of Param Loads     :               3117056 [ops]
+Number of Stores          :                346112 [ops]
+Number of Multiplications :                389376 [ops]
+Number of Additions       :              11421696 [ops]
+Number of Divisions       :                     0 [ops]
+Number of Activations     :                 43264 [ops]
+Number of Arithmetics     :              11854336 [ops]
+
+Operations per Cycle
+Multiplications           :  0.016329202931033550	[ops/cycle]
+Additions                 :  0.478989952643650796	[ops/cycle]
+Divisions                 :  0.000000000000000000	[ops/cycle]
+Activations               :  0.001814355881225950	[ops/cycle]
+Arithmetics               :  0.497133511455910337	[ops/cycle]
+
+Execution Cycles
+Data Load                 :               1168128 [cycles]
+Param Load                :              10520064 [cycles]
+Data Store                :                692224 [cycles]
+Multiplication            :                389376 [cycles]
+Addition                  :              11421696 [cycles]
+Division                  :                     0 [cycles]
+Activation                :                 43264 [cycles]
+Arithmetic                :              11464961 [cycles]
+Total                     :              23845377 [cycles]
+
+Execution Cycles Breakdown
+Data Load                 :  4.898760879310064986	[%]
+Param Load                :  44.117834664555729773	[%]
+Data Store                :  2.902969409961519975	[%]
+Multiplication            :  1.632920293103355069	[%]
+Addition                  :  47.898995264365076707	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.181435588122594998	[%]
+Arithmetic                :  48.080435046172681268	[%]
+
+Execution Time
+Data Load                 :  2.920319999999999805	[msec]
+Param Load                :  26.300160000000001759	[msec]
+Data Store                :  1.730560000000000098	[msec]
+Multiplication            :  0.973439999999999972	[msec]
+Addition                  :  28.554240000000000066	[msec]
+Division                  :  0.000000000000000000	[msec]
+Activation                :  0.108160000000000006	[msec]
+Arithmetic                :  28.662402499999998895	[msec]
+Total                     :  59.613442499999997892	[msec]
+
+Execution Time Breakdown
+Data Load                 :  4.898760879310065874	[%]
+Param Load                :  44.117834664555736879	[%]
+Data Store                :  2.902969409961519975	[%]
+Multiplication            :  1.632920293103355069	[%]
+Addition                  :  47.898995264365083813	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.181435588122594998	[%]
+Arithmetic                :  48.080435046172688374	[%]
+Total                     :  100.000000000000000000	[%]
+
+Energy Consumption
+Energy on Data Load       :  0.000000031352069628	[mJ]
+Energy on Param Load      :  0.000000282354141853	[mJ]
+Energy on Data Store      :  0.000000018579004224	[mJ]
+Energy on Multipliers     :  0.000000000050620529	[mJ]
+Energy on Adders          :  0.000000000047898995	[mJ]
+Energy on Dividers        :  0.000000000000000000	[mJ]
+Energy on Activations     :  0.000000000000018144	[mJ]
+Total Energy              :  0.000000332383753372	[mJ]
+
+Energy Breakdown
+Data Load                 :  9.432491603299700600	[%]
+Param Load                :  84.948237989480148258	[%]
+Data Store                :  5.589624653807231169	[%]
+Multipliers               :  0.015229543734494312	[%]
+Adders                    :  0.014410751060596767	[%]
+Dividers                  :  0.000000000000000000	[%]
+Activations               :  0.000005458617825984	[%]
+
+Total Power Consumption   :  0.132953501348961695	[W]
+Operations per Second     :  198853404.582364141941070557	[ops/second]
+Power-Efficiency          :  1.495661284319512951	[GOPS/W]
+
+
+Layer10: max_pooling
+Operations
+Number of Data Loads      :                346112 [ops]
+Number of Param Loads     :                     0 [ops]
+Number of Stores          :                 73728 [ops]
+Number of Multiplications :                     0 [ops]
+Number of Additions       :                221184 [ops]
+Number of Divisions       :                     0 [ops]
+Number of Activations     :                     0 [ops]
+Number of Arithmetics     :                221184 [ops]
+
+Operations per Cycle
+Multiplications           :  0.000000000000000000	[ops/cycle]
+Additions                 :  0.143927942325749680	[ops/cycle]
+Divisions                 :  0.000000000000000000	[ops/cycle]
+Activations               :  0.000000000000000000	[ops/cycle]
+Arithmetics               :  0.143927942325749680	[ops/cycle]
+
+Execution Cycles
+Data Load                 :               1168128 [cycles]
+Param Load                :                     0 [cycles]
+Data Store                :                147456 [cycles]
+Multiplication            :                     0 [cycles]
+Addition                  :                221184 [cycles]
+Division                  :                     0 [cycles]
+Activation                :                     0 [cycles]
+Arithmetic                :                221185 [cycles]
+Total                     :               1536769 [cycles]
+
+Execution Cycles Breakdown
+Data Load                 :  76.011944540786544167	[%]
+Param Load                :  0.000000000000000000	[%]
+Data Store                :  9.595196155049979581	[%]
+Multiplication            :  0.000000000000000000	[%]
+Addition                  :  14.392794232574967594	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.000000000000000000	[%]
+Arithmetic                :  14.392859304163474476	[%]
+
+Execution Time
+Data Load                 :  2.920319999999999805	[msec]
+Param Load                :  0.000000000000000000	[msec]
+Data Store                :  0.368640000000000023	[msec]
+Multiplication            :  0.000000000000000000	[msec]
+Addition                  :  0.552960000000000007	[msec]
+Division                  :  0.000000000000000000	[msec]
+Activation                :  0.000000000000000000	[msec]
+Arithmetic                :  0.552962500000000023	[msec]
+Total                     :  3.841922499999999907	[msec]
+
+Execution Time Breakdown
+Data Load                 :  76.011944540786544167	[%]
+Param Load                :  0.000000000000000000	[%]
+Data Store                :  9.595196155049977804	[%]
+Multiplication            :  0.000000000000000000	[%]
+Addition                  :  14.392794232574967594	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.000000000000000000	[%]
+Arithmetic                :  14.392859304163474476	[%]
+Total                     :  100.000000000000000000	[%]
+
+Energy Consumption
+Energy on Data Load       :  0.000000486476445061	[mJ]
+Energy on Param Load      :  0.000000000000000000	[mJ]
+Energy on Data Store      :  0.000000061409255392	[mJ]
+Energy on Multipliers     :  0.000000000000000000	[mJ]
+Energy on Adders          :  0.000000000014392794	[mJ]
+Energy on Dividers        :  0.000000000000000000	[mJ]
+Energy on Activations     :  0.000000000000000000	[mJ]
+Total Energy              :  0.000000547900093248	[mJ]
+
+Energy Breakdown
+Data Load                 :  88.789261227813625510	[%]
+Param Load                :  0.000000000000000000	[%]
+Data Store                :  11.208111870966613210	[%]
+Multipliers               :  0.000000000000000000	[%]
+Adders                    :  0.002626901219757800	[%]
+Dividers                  :  0.000000000000000000	[%]
+Activations               :  0.000000000000000000	[%]
+
+Total Power Consumption   :  0.219160037299034494	[W]
+Operations per Second     :  57571176.930299870669841766	[ops/second]
+Power-Efficiency          :  0.262690121975780011	[GOPS/W]
+
+
+Layer11: full_connection
+Operations
+Number of Data Loads      :                 73728 [ops]
+Number of Param Loads     :             301989896 [ops]
+Number of Stores          :               8388608 [ops]
+Number of Multiplications :            9663676416 [ops]
+Number of Additions       :            9663676415 [ops]
+Number of Divisions       :                     0 [ops]
+Number of Activations     :                  4096 [ops]
+Number of Arithmetics     :           19327356927 [ops]
+
+Operations per Cycle
+Multiplications           :  0.903153871990136858	[ops/cycle]
+Additions                 :  0.903153871896678284	[ops/cycle]
+Divisions                 :  0.000000000000000000	[ops/cycle]
+Activations               :  0.000000382806511769	[ops/cycle]
+Arithmetics               :  1.806308126693326965	[ops/cycle]
+
+Execution Cycles
+Data Load                 :                248832 [cycles]
+Param Load                :            1019215918 [cycles]
+Data Store                :              16777216 [cycles]
+Multiplication            :            9663676416 [cycles]
+Addition                  :            9663676415 [cycles]
+Division                  :                     0 [cycles]
+Activation                :                  4096 [cycles]
+Arithmetic                :            9663680512 [cycles]
+Total                     :           10699922478 [cycles]
+
+Execution Cycles Breakdown
+Data Load                 :  0.002325549558995599	[%]
+Param Load                :  9.525451423555630015	[%]
+Data Store                :  0.156797547220509870	[%]
+Multiplication            :  90.315387199013684949	[%]
+Addition                  :  90.315387189667831080	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.000038280651176882	[%]
+Arithmetic                :  90.315425479664867225	[%]
+
+Execution Time
+Data Load                 :  0.622079999999999966	[msec]
+Param Load                :  2548.039795000000140135	[msec]
+Data Store                :  41.943040000000003431	[msec]
+Multiplication            :  24159.191040000001521548	[msec]
+Addition                  :  24159.191037500000675209	[msec]
+Division                  :  0.000000000000000000	[msec]
+Activation                :  0.010240000000000001	[msec]
+Arithmetic                :  24159.201280000001133885	[msec]
+Total                     :  26749.806195000001025619	[msec]
+
+Execution Time Breakdown
+Data Load                 :  0.002325549558995599	[%]
+Param Load                :  9.525451423555630015	[%]
+Data Store                :  0.156797547220509870	[%]
+Multiplication            :  90.315387199013684949	[%]
+Addition                  :  90.315387189667816870	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.000038280651176882	[%]
+Arithmetic                :  90.315425479664867225	[%]
+Total                     :  100.000000000000000000	[%]
+
+Energy Consumption
+Energy on Data Load       :  0.000000000014883517	[mJ]
+Energy on Param Load      :  0.000000060962889111	[mJ]
+Energy on Data Store      :  0.000000001003504302	[mJ]
+Energy on Multipliers     :  0.000000002799777003	[mJ]
+Energy on Adders          :  0.000000000090315387	[mJ]
+Energy on Dividers        :  0.000000000000000000	[mJ]
+Energy on Activations     :  0.000000000000000004	[mJ]
+Total Energy              :  0.000000064871369324	[mJ]
+
+Energy Breakdown
+Data Load                 :  0.022943121646099296	[%]
+Param Load                :  93.975030503772657653	[%]
+Data Store                :  1.546914012550168138	[%]
+Multipliers               :  4.315890095014968786	[%]
+Adders                    :  0.139222261115108381	[%]
+Dividers                  :  0.000000000000000000	[%]
+Activations               :  0.000000005901008654	[%]
+
+Total Power Consumption   :  0.025948547729732804	[W]
+Operations per Second     :  722523250.677330732345581055	[ops/second]
+Power-Efficiency          :  27.844458125471003740	[GOPS/W]
+
+
+Layer12: full_connection
+Operations
+Number of Data Loads      :                 32768 [ops]
+Number of Param Loads     :             134217736 [ops]
+Number of Stores          :                 32768 [ops]
+Number of Multiplications :              16777216 [ops]
+Number of Additions       :              16777215 [ops]
+Number of Divisions       :                     0 [ops]
+Number of Activations     :                  4096 [ops]
+Number of Arithmetics     :              33558527 [ops]
+
+Operations per Cycle
+Multiplications           :  0.035700585704648118	[ops/cycle]
+Additions                 :  0.035700583576727389	[ops/cycle]
+Divisions                 :  0.000000000000000000	[ops/cycle]
+Activations               :  0.000008715963306799	[ops/cycle]
+Arithmetics               :  0.071409885244682308	[ops/cycle]
+
+Execution Cycles
+Data Load                 :                110592 [cycles]
+Param Load                :             452984878 [cycles]
+Data Store                :                 65536 [cycles]
+Multiplication            :              16777216 [cycles]
+Addition                  :              16777215 [cycles]
+Division                  :                     0 [cycles]
+Activation                :                  4096 [cycles]
+Arithmetic                :              16781312 [cycles]
+Total                     :             469942318 [cycles]
+
+Execution Cycles Breakdown
+Data Load                 :  0.023533100928356913	[%]
+Param Load                :  96.391591190985266735	[%]
+Data Store                :  0.013945541290878171	[%]
+Multiplication            :  3.570058570464811787	[%]
+Addition                  :  3.570058357672738936	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.000871596330679886	[%]
+Arithmetic                :  3.570930166795491800	[%]
+
+Execution Time
+Data Load                 :  0.276480000000000004	[msec]
+Param Load                :  1132.462195000000065193	[msec]
+Data Store                :  0.163840000000000013	[msec]
+Multiplication            :  41.943040000000003431	[msec]
+Addition                  :  41.943037500000002638	[msec]
+Division                  :  0.000000000000000000	[msec]
+Activation                :  0.010240000000000001	[msec]
+Arithmetic                :  41.953279999999999461	[msec]
+Total                     :  1174.855794999999943684	[msec]
+
+Execution Time Breakdown
+Data Load                 :  0.023533100928356913	[%]
+Param Load                :  96.391591190985266735	[%]
+Data Store                :  0.013945541290878169	[%]
+Multiplication            :  3.570058570464811343	[%]
+Addition                  :  3.570058357672738936	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.000871596330679886	[%]
+Arithmetic                :  3.570930166795491356	[%]
+Total                     :  100.000000000000000000	[%]
+
+Energy Consumption
+Energy on Data Load       :  0.000000000150611846	[mJ]
+Energy on Param Load      :  0.000000616906183622	[mJ]
+Energy on Data Store      :  0.000000000089251464	[mJ]
+Energy on Multipliers     :  0.000000000110671816	[mJ]
+Energy on Adders          :  0.000000000003570058	[mJ]
+Energy on Dividers        :  0.000000000000000000	[mJ]
+Energy on Activations     :  0.000000000000000087	[mJ]
+Total Energy              :  0.000000617260288894	[mJ]
+
+Energy Breakdown
+Data Load                 :  0.024400054345213022	[%]
+Param Load                :  99.942632747031339591	[%]
+Data Store                :  0.014459291463829937	[%]
+Multipliers               :  0.017929521415149120	[%]
+Adders                    :  0.000578371624079560	[%]
+Dividers                  :  0.000000000000000000	[%]
+Activations               :  0.000000014120401820	[%]
+
+Total Power Consumption   :  0.246904115557484233	[W]
+Operations per Second     :  28563954.097872924059629440	[ops/second]
+Power-Efficiency          :  0.115688448665095908	[GOPS/W]
+
+
+Layer13: full_connection
+Operations
+Number of Data Loads      :                 32768 [ops]
+Number of Param Loads     :              32768008 [ops]
+Number of Stores          :                  8000 [ops]
+Number of Multiplications :               4096000 [ops]
+Number of Additions       :               4095999 [ops]
+Number of Divisions       :                     0 [ops]
+Number of Activations     :                  1000 [ops]
+Number of Arithmetics     :               8192999 [ops]
+
+Operations per Cycle
+Multiplications           :  0.035669922865010993	[ops/cycle]
+Additions                 :  0.035669914156533727	[ops/cycle]
+Divisions                 :  0.000000000000000000	[ops/cycle]
+Activations               :  0.000008708477261966	[ops/cycle]
+Arithmetics               :  0.071348545498806690	[ops/cycle]
+
+Execution Cycles
+Data Load                 :                110592 [cycles]
+Param Load                :             110592046 [cycles]
+Data Store                :                 16000 [cycles]
+Multiplication            :               4096000 [cycles]
+Addition                  :               4095999 [cycles]
+Division                  :                     0 [cycles]
+Activation                :                 16000 [cycles]
+Arithmetic                :               4112000 [cycles]
+Total                     :             114830638 [cycles]
+
+Execution Cycles Breakdown
+Data Load                 :  0.096308791735529670	[%]
+Param Load                :  96.308831794525090686	[%]
+Data Store                :  0.013933563619144919	[%]
+Multiplication            :  3.566992286501099230	[%]
+Addition                  :  3.566991415653372854	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.013933563619144919	[%]
+Arithmetic                :  3.580925850120243670	[%]
+
+Execution Time
+Data Load                 :  0.276480000000000004	[msec]
+Param Load                :  276.480115000000012060	[msec]
+Data Store                :  0.040000000000000001	[msec]
+Multiplication            :  10.240000000000000213	[msec]
+Addition                  :  10.239997499999999420	[msec]
+Division                  :  0.000000000000000000	[msec]
+Activation                :  0.040000000000000001	[msec]
+Arithmetic                :  10.279999999999999361	[msec]
+Total                     :  287.076594999999997526	[msec]
+
+Execution Time Breakdown
+Data Load                 :  0.096308791735529670	[%]
+Param Load                :  96.308831794525076475	[%]
+Data Store                :  0.013933563619144919	[%]
+Multiplication            :  3.566992286501099230	[%]
+Addition                  :  3.566991415653372854	[%]
+Division                  :  0.000000000000000000	[%]
+Activation                :  0.013933563619144919	[%]
+Arithmetic                :  3.580925850120244114	[%]
+Total                     :  100.000000000000000000	[%]
+
+Energy Consumption
+Energy on Data Load       :  0.000000000616376267	[mJ]
+Energy on Param Load      :  0.000000616376523485	[mJ]
+Energy on Data Store      :  0.000000000089174807	[mJ]
+Energy on Multipliers     :  0.000000000110576761	[mJ]
+Energy on Adders          :  0.000000000003566991	[mJ]
+Energy on Dividers        :  0.000000000000000000	[mJ]
+Energy on Activations     :  0.000000000000001393	[mJ]
+Total Energy              :  0.000000617196219705	[mJ]
+
+Energy Breakdown
+Data Load                 :  0.099867148797851329	[%]
+Param Load                :  99.867190336921467519	[%]
+Data Store                :  0.014448372221911360	[%]
+Multipliers               :  0.017915981555170091	[%]
+Adders                    :  0.000577934747779070	[%]
+Dividers                  :  0.000000000000000000	[%]
+Activations               :  0.000000225755815967	[%]
+
+Total Power Consumption   :  0.246878487881953601	[W]
+Operations per Second     :  28539418.199522674083709717	[ops/second]
+Power-Efficiency          :  0.115601073404050347	[GOPS/W]
+
+
+
+3.Total Statictics
+Data Loads                :              45631952 [ops]
+Param Loads               :             793404952 [ops]
+Stores                    :              13216016 [ops]
+Multiply                  :            9722327136 [ops]
+Addition                  :            9822875363 [ops]
+Division                  :                  3194 [ops]
+Activation                :                515912 [ops]
+Total Arithmetic          :           19545721605 [ops]
+Total Execution Operations:           20397974525 [ops]
+
+Operations Breakdown
+Data Loads                :  0.223708250758294369	[%]
+Param Loads               :  3.889626153947753462	[%]
+Stores                    :  0.064790825107670841	[%]
+Multiply                  :  47.663198736150000911	[%]
+Addition                  :  48.156131144104371344	[%]
+Division                  :  0.000015658417437895	[%]
+Activation                :  0.002529231514470675	[%]
+Total Arithmetics         :  95.821874770186283854	[%]
+TOPS                      :  0.002224870422620727	[TOPS]
+
+Operations per Cycle
+Multiplications           :  0.766642853011242464	[ops/cycle]
+Additions                 :  0.774571467069812059	[ops/cycle]
+Divisions                 :  0.000000251859173042	[ops/cycle]
+Activations               :  0.000040681643607547	[ops/cycle]
+Arithmetics               :  1.541255253583835083	[ops/cycle]
+
+Execution Cycle
+Data Loads                :             154007876 [cycles]
+Param Loads               :            2677741770 [cycles]
+Stores                    :              26432032 [cycles]
+Multiply                  :            9722327136 [cycles]
+Addition                  :            9822875363 [cycles]
+Division                  :                102208 [cycles]
+Activation                :                530912 [cycles]
+Total Execution Cycles    :           12681690174 [cycles]
+Execution Time            :  31704.225435000000288710	[msec]
+
+Execution Cycle Breakdown
+Data Loads                :  0.359825475736307021	[%]
+Param Loads               :  6.256302914785276670	[%]
+Stores                    :  0.104213364454333338	[%]
+Multiply                  :  76.664285301124252214	[%]
+Addition                  :  77.457146706981205853	[%]
+Division                  :  0.000805949353734779	[%]
+Activation                :  0.004186445124550320	[%]
+Total Arithmetics         :  154.126424402583751316	[%]
+
+
+4.Implementation Requirement
+Prerequisists Latency     :  0.033329999999999999	[sec] needing of:
+Clock Frequency           :  380488.754095409531146288	[MHz]
+Prerequisists Clock Freq. :  1000000000.000000000000000000	[Hz]  needing of:
+Data-Level Parallelism    :  380.501079116856942619	[MADs]
+
+
+5.Energy & Power Consumptions
+Data Load                 :  0.000000001431732805	[mJ]
+Data Store                :  0.000000000414661281	[mJ]
+Param Load                :  0.000000024893607385	[mJ]
+Multipliers               :  0.000000001477559161	[mJ]
+Adders                    :  0.000000000048156131	[mJ]
+Dividers                  :  0.000000000000000783	[mJ]
+Activations               :  0.000000000000000253	[mJ]
+Total                     :  0.000000028265717799	[mJ]
+
+Energy Breakdown
+Data Load                 :  5.065262502985710569	[%]
+Data Store                :  1.467011323198692319	[%]
+Param Load                :  88.069963630939525956	[%]
+Multipliers               :  5.227389487674595436	[%]
+Adders                    :  0.170369390535913795	[%]
+Dividers                  :  0.000002769860215377	[%]
+Activations               :  0.000000894805337155	[%]
+
+Total Power Consumption   :  0.011306287119446631	[W]
+Power-Efficiency          :  0.196781701996050107	[TOPS/W]
+
+
+6.Summary
+                        Load Data                                                                                     Load Param                                                                                      Store Data                                                                                      Multiply                                                                                        Addition                                                                                        Division                                                                                        Activation                                                                                     Layer
+         layer type:    ops          ratio,          cycles          ratio,           energy [pJ]   ratio,            ops            ratio,          cycles          ratio,          energy [pJ]    ratio,            ops            ratio,          cycles          ratio,          energy [pJ]    ratio,            ops            ratio,          cycles          ratio,          energy [pJ]    ratio,            ops            ratio,          cycles          ratio,          energy [pJ]    ratio,            ops            ratio,          cycles          ratio,          energy [pJ]    ratio,            ops            ratio,          cycles          ratio,          energy [pJ]    ratio,           energy [pJ]    ratio
+Layer  1 (convolution):      4946784 (3.505055	[%]),	   133563168 (10.945833	[%]),	70.053330	(11.540106	[%]),	    37740480 (26.741100	[%]),	  1018992960 (83.509000	[%]),	534.457600	(88.042884	[%]),	      290400 (0.205764	[%]),	     4646400 (0.380784	[%]),	2.437018	(0.401458	[%]),	    35138400 (24.897390	[%]),	    35138400 (2.879679	[%]),	0.089270	(0.014706	[%]),	    62726400 (44.444928	[%]),	      290400 (0.023799	[%]),	0.005141	(0.000847	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	      290400 (0.205764	[%]),	      290400 (0.023799	[%]),	0.000002	(0.000000	[%]),	607.042361	(11.515767	[%])
+Layer  2 (batch_norma):         3025 (1.020408	[%]),	       81694 (15.885430	[%]),	101.666751	(62.411784	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	        3025 (1.020408	[%]),	       48400 (9.411399	[%]),	60.232952	(36.976159	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	      287375 (96.938776	[%]),	           0 (0.000000	[%]),	0.055880	(0.034304	[%]),	        3025 (1.020408	[%]),	       96800 (18.822797	[%]),	0.941140	(0.577752	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	162.896723	(3.090197	[%])
+Layer  3 (max_pooling):       290400 (31.556436	[%]),	     7840800 (82.357737	[%]),	527.089517	(87.502762	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	       69984 (7.604840	[%]),	     1119744 (11.761502	[%]),	75.273610	(12.496262	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	      559872 (60.838723	[%]),	           0 (0.000000	[%]),	0.005881	(0.000976	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	602.369008	(11.427112	[%])
+Layer  4 (convolution):       186624 (1.267540	[%]),	     5038848 (9.734277	[%]),	62.299371	(12.719894	[%]),	     1254656 (8.521552	[%]),	    33875712 (65.442648	[%]),	418.832947	(85.514675	[%]),	       43264 (0.293847	[%]),	      692224 (1.337270	[%]),	8.558528	(1.747426	[%]),	     1081600 (7.346165	[%]),	     1081600 (2.089484	[%]),	0.064774	(0.013225	[%]),	    12113920 (82.277050	[%]),	       43264 (0.083579	[%]),	0.023402	(0.004778	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	       43264 (0.293847	[%]),	       43264 (0.083579	[%]),	0.000008	(0.000002	[%]),	489.779030	(9.291248	[%])
+Layer  5 (batch_norma):          169 (0.387597	[%]),	        4582 (8.212941	[%]),	52.562825	(62.467761	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	         169 (0.387597	[%]),	        2704 (4.846747	[%]),	31.019179	(36.864431	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	       43095 (98.837209	[%]),	           0 (0.000000	[%]),	0.077245	(0.091801	[%]),	         169 (0.387597	[%]),	        5408 (9.693493	[%]),	0.484675	(0.576007	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	84.143924	(1.596234	[%])
+Layer  6 (max_pooling):        43264 (34.279919	[%]),	     1168128 (84.079541	[%]),	538.109065	(88.790816	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	        9216 (7.302231	[%]),	      147456 (10.613591	[%]),	67.926983	(11.208308	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	       73728 (58.417850	[%]),	           0 (0.000000	[%]),	0.005307	(0.000876	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	606.041355	(11.496778	[%])
+Layer  7 (convolution):        64896 (0.242127	[%]),	     1752192 (3.975500	[%]),	25.443203	(9.431833	[%]),	      584448 (2.180578	[%]),	    15780096 (35.803028	[%]),	229.139377	(84.942303	[%]),	       64896 (0.242127	[%]),	     1038336 (2.355852	[%]),	15.077454	(5.589234	[%]),	      584064 (2.179146	[%]),	      584064 (1.325167	[%]),	0.041080	(0.015228	[%]),	    25439232 (94.913894	[%]),	       64896 (0.147241	[%]),	0.057718	(0.021396	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	       64896 (0.242127	[%]),	       64896 (0.147241	[%]),	0.000015	(0.000005	[%]),	269.758847	(5.117402	[%])
+Layer  8 (convolution):        64896 (0.242127	[%]),	     1752192 (3.975500	[%]),	25.443203	(9.431833	[%]),	      584448 (2.180578	[%]),	    15780096 (35.803028	[%]),	229.139377	(84.942303	[%]),	       64896 (0.242127	[%]),	     1038336 (2.355852	[%]),	15.077454	(5.589234	[%]),	      584064 (2.179146	[%]),	      584064 (1.325167	[%]),	0.041080	(0.015228	[%]),	    25439232 (94.913894	[%]),	       64896 (0.147241	[%]),	0.057718	(0.021396	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	       64896 (0.242127	[%]),	       64896 (0.147241	[%]),	0.000015	(0.000005	[%]),	269.758847	(5.117402	[%])
+Layer  9 (convolution):        43264 (0.350870	[%]),	     1168128 (4.898761	[%]),	31.352070	(9.432492	[%]),	      389632 (3.159905	[%]),	    10520064 (44.117835	[%]),	282.354142	(84.948238	[%]),	       43264 (0.350870	[%]),	      692224 (2.902969	[%]),	18.579004	(5.589625	[%]),	      389376 (3.157829	[%]),	      389376 (1.632920	[%]),	0.050621	(0.015230	[%]),	    11421696 (92.629656	[%]),	       43264 (0.181436	[%]),	0.047899	(0.014411	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	       43264 (0.350870	[%]),	       43264 (0.181436	[%]),	0.000018	(0.000005	[%]),	332.383753	(6.305415	[%])
+Layer 10 (max_pooling):        43264 (15.809167	[%]),	     1168128 (76.011945	[%]),	486.476445	(88.789261	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	        9216 (3.367633	[%]),	      147456 (9.595196	[%]),	61.409255	(11.208112	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	      221184 (80.823199	[%]),	           0 (0.000000	[%]),	0.014393	(0.002627	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	547.900093	(10.393821	[%])
+Layer 11 (full_connec):         9216 (0.000048	[%]),	      248832 (0.002326	[%]),	0.014884	(0.022943	[%]),	    37748737 (0.194921	[%]),	  1019215918 (9.525451	[%]),	60.962889	(93.975031	[%]),	     1048576 (0.005414	[%]),	    16777216 (0.156798	[%]),	1.003504	(1.546914	[%]),	  9663676416 (49.899798	[%]),	  9663676416 (90.315387	[%]),	2.799777	(4.315890	[%]),	  9663676415 (49.899798	[%]),	        4096 (0.000038	[%]),	0.090315	(0.139222	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	        4096 (0.000021	[%]),	        4096 (0.000038	[%]),	0.000000	(0.000000	[%]),	64.871369	(1.230628	[%])
+Layer 12 (full_connec):         4096 (0.008136	[%]),	      110592 (0.023533	[%]),	0.150612	(0.024400	[%]),	    16777217 (33.325199	[%]),	   452984878 (96.391591	[%]),	616.906184	(99.942633	[%]),	        4096 (0.008136	[%]),	       65536 (0.013946	[%]),	0.089251	(0.014459	[%]),	    16777216 (33.325197	[%]),	    16777216 (3.570059	[%]),	0.110672	(0.017930	[%]),	    16777215 (33.325195	[%]),	        4096 (0.000872	[%]),	0.003570	(0.000578	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	        4096 (0.008136	[%]),	        4096 (0.000872	[%]),	0.000000	(0.000000	[%]),	617.260289	(11.709604	[%])
+Layer 13 (full_connec):         4096 (0.033317	[%]),	      110592 (0.096309	[%]),	0.616376	(0.099867	[%]),	     4096001 (33.316813	[%]),	   110592046 (96.308832	[%]),	616.376523	(99.867190	[%]),	        1000 (0.008134	[%]),	       16000 (0.013934	[%]),	0.089175	(0.014448	[%]),	     4096000 (33.316805	[%]),	     4096000 (3.566992	[%]),	0.110577	(0.017916	[%]),	     4095999 (33.316797	[%]),	       16000 (0.013934	[%]),	0.003567	(0.000578	[%]),	           0 (0.000000	[%]),	           0 (0.000000	[%]),	0.000000	(0.000000	[%]),	        1000 (0.008134	[%]),	       16000 (0.013934	[%]),	0.000001	(0.000000	[%]),	617.196220	(11.708389	[%])
