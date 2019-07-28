@@ -106,7 +106,7 @@ def statistics(process, pipeline, config_layers, config_hard, f_out, record_laye
     total_exec_load_param_cycles        = numpy.zeros(number_of_layers + 1)
     total_exec_store_data_cycles        = numpy.zeros(number_of_layers + 1)
     total_exec_multiplication_cycles    = numpy.zeros(number_of_layers + 1)
-    total_exec_activation_cycles        = numpy.zeros(number_of_layers + 1)
+    total_exec_addition_cycles          = numpy.zeros(number_of_layers + 1)
     total_exec_division_cycles          = numpy.zeros(number_of_layers + 1)
     total_exec_activation_cycles        = numpy.zeros(number_of_layers + 1)
     total_exec_cycles                   = numpy.zeros(number_of_layers + 1)
@@ -131,13 +131,13 @@ def statistics(process, pipeline, config_layers, config_hard, f_out, record_laye
             number_of_parallel_out              = int(config_pres_layer['number_of_parallel_kernels'])
 
             #Number of Operations
-            number_of_data_loads                = statics_total_number_of_loads_data[layer_id] * (load_dtype / dwidth_for_multiplication)
+            number_of_data_loads                = statics_total_number_of_loads_data[layer_id] * (dwidth_for_multiplication / load_dtype)
             total_number_of_data_loads          += number_of_data_loads
 
-            number_of_param_loads               = statics_total_number_of_loads_param[layer_id] * (load_dtype / dwidth_for_multiplication)
+            number_of_param_loads               = statics_total_number_of_loads_param[layer_id] * (dwidth_for_multiplication / load_dtype)
             total_number_of_param_loads         += number_of_param_loads
 
-            number_of_data_stores               = statics_total_number_of_stores_data[layer_id] * (store_dtype / dwidth_for_multiplication)
+            number_of_data_stores               = statics_total_number_of_stores_data[layer_id] * (dwidth_for_multiplication / store_dtype)
             total_number_of_data_stores         += number_of_data_stores
 
             number_of_multiplies                = statics_total_number_of_multiplies[layer_id]
@@ -200,15 +200,14 @@ def statistics(process, pipeline, config_layers, config_hard, f_out, record_laye
             total_number_of_arith_op_per_cycle += number_of_arith_op_per_cycle
 
             ratio_compute       = float(total_layer_compute_cycles)             / float(total_layer_cycles)
-            ratio_load_data     = float(total_layer_load_data_cycles)           / float(total_layer_cycles)
             ratio_load_param    = float(total_layer_load_param_cycles)          / float(total_layer_cycles)
+            ratio_load_data     = float(total_layer_load_data_cycles)           / float(total_layer_cycles)
             ratio_load          = float(total_layer_load_cycles)                / float(total_layer_cycles)
             ratio_store         = float(total_layer_store_data_cycles)          / float(total_layer_cycles)
             ratio_multiplier    = float(total_multiplication_sequential_cycles) / float(total_layer_cycles)
             ratio_adder         = float(total_addition_sequential_cycles)       / float(total_layer_cycles)
             ratio_divider       = float(total_division_sequential_cycles)       / float(total_layer_cycles)
             ratio_activation    = float(total_activation_sequential_cycles)     / float(total_layer_cycles)
-
 
             #Print Statics for Layer
             f_out.writelines('Layer' + str(layer_id) + ': ' + record_layer_type.pop() + '\n')
@@ -275,13 +274,13 @@ def statistics(process, pipeline, config_layers, config_hard, f_out, record_laye
             f_out.writelines("Total                     : {: 3.18f}\t[%]\n\n".format(100 * total_layer_time / total_layer_time))
 
             f_out.writelines("Energy Consumption\n")
-            total_energy_data_read  = float(ratio_load_data   * energy_dram_read)
-            total_energy_param_read = float(ratio_load_param  * energy_dram_read)
-            total_energy_data_write = float(ratio_store       * energy_dram_write)
-            total_energy_multiplier = float(ratio_multiplier  * energy_multiplier)
-            total_energy_adder      = float(ratio_adder       * energy_adder)
-            total_energy_divider    = float(ratio_divider     * energy_divider)
-            total_energy_activation = float(ratio_activation  * energy_activation)
+            total_energy_data_read  = float(number_of_data_loads   * energy_dram_read)
+            total_energy_param_read = float(number_of_param_loads  * energy_dram_read)
+            total_energy_data_write = float(number_of_data_stores  * energy_dram_write)
+            total_energy_multiplier = float(number_of_multiplies   * energy_multiplier)
+            total_energy_adder      = float(number_of_additions    * energy_adder)
+            total_energy_divider    = float(number_of_divisions    * energy_divider)
+            total_energy_activation = float(number_of_activations  * energy_activation)
             layer_total_energy      = total_energy_data_read + total_energy_data_write + total_energy_param_read + total_energy_multiplier + total_energy_adder + total_energy_divider + total_energy_activation
             total_energy            += layer_total_energy
 
@@ -326,7 +325,7 @@ def statistics(process, pipeline, config_layers, config_hard, f_out, record_laye
             total_exec_load_param_cycles[layer_id]      = total_layer_load_param_cycles
             total_exec_store_data_cycles[layer_id]      = total_layer_store_data_cycles
             total_exec_multiplication_cycles[layer_id]  = total_multiplication_sequential_cycles
-            total_exec_activation_cycles[layer_id]      = total_addition_sequential_cycles
+            total_exec_addition_cycles[layer_id]      = total_addition_sequential_cycles
             total_exec_division_cycles[layer_id]        = total_division_sequential_cycles
             total_exec_activation_cycles[layer_id]      = total_activation_sequential_cycles
             total_exec_cycles[layer_id]                 = total_layer_cycles
@@ -471,7 +470,7 @@ def statistics(process, pipeline, config_layers, config_hard, f_out, record_laye
     f_out.writelines("Dividers                  : {: 3.18f}\t[mJ]\n".format(total_energy_divider    * 1000.0))
     f_out.writelines("Activations               : {: 3.18f}\t[mJ]\n".format(total_energy_activation * 1000.0))
     f_out.writelines("Total                     : {: 3.18f}\t[mJ]\n\n".format(total_energy          * 1000.0))
-    print(total_energy)
+
     f_out.writelines("Energy Breakdown\n")
     f_out.writelines("Data Load                 : {: 3.18f}\t[%]\n".format(total_energy_data_read   / total_energy * 100.0))
     f_out.writelines("Data Store                : {: 3.18f}\t[%]\n".format(total_energy_data_write  / total_energy * 100.0))
@@ -539,7 +538,7 @@ def statistics(process, pipeline, config_layers, config_hard, f_out, record_laye
             total_layer_load_param_cycles           = total_exec_load_param_cycles[layer_id]
             total_layer_store_data_cycles           = total_exec_store_data_cycles[layer_id]
             total_layer_multiplication_cycles       = total_exec_multiplication_cycles[layer_id]
-            total_layer_addition_cycles             = total_exec_activation_cycles[layer_id]
+            total_layer_addition_cycles             = total_exec_addition_cycles[layer_id]
             total_layer_division_cycles             = total_exec_division_cycles[layer_id]
             total_layer_activation_cycles           = total_exec_activation_cycles[layer_id]
             total_layer_cycles                      = total_exec_cycles[layer_id]
@@ -553,6 +552,6 @@ def statistics(process, pipeline, config_layers, config_hard, f_out, record_laye
             total_energy_activation                 = total_activation_energy[layer_id]
             layer_energy_total                      = total_layer_energy[layer_id]
 
-            f_out.writelines('Layer{0:3d} ({1:}): {2:12d} ({3:3.6f}\t[%]),\t{4:12d} ({5:3.6f}\t[%]),\t{6:3.6f}\t({7:3.6f}\t[%]),\t{8:12d} ({9:3.6f}\t[%]),\t{10:12d} ({11:3.6f}\t[%]),\t{12:3.6f}\t({13:3.6f}\t[%]),\t{14:12d} ({15:3.6f}\t[%]),\t{16:12d} ({17:3.6f}\t[%]),\t{18:3.6f}\t({19:3.6f}\t[%]),\t{20:12d} ({21:3.6f}\t[%]),\t{22:12d} ({23:3.6f}\t[%]),\t{24:3.6f}\t({25:3.6f}\t[%]),\t{26:12d} ({27:3.6f}\t[%]),\t{28:12d} ({29:3.6f}\t[%]),\t{30:3.6f}\t({31:3.6f}\t[%]),\t{32:12d} ({33:3.6f}\t[%]),\t{34:12d} ({35:3.6f}\t[%]),\t{36:3.6f}\t({37:3.6f}\t[%]),\t{38:12d} ({39:3.6f}\t[%]),\t{40:12d} ({41:3.6f}\t[%]),\t{42:3.6f}\t({43:3.6f}\t[%]),\t{44:3.6f}\t({45:3.6f}\t[%])\n'.format(layer_id, record_layer_type_[layer_id][:11], int(total_layer_data_loads), percent * total_layer_data_loads / total_layer_operations, int(total_layer_load_data_cycles), percent * total_layer_load_data_cycles / total_layer_cycles, scale * total_energy_data_read, percent * total_energy_data_read / layer_energy_total, int(total_layer_param_loads), percent * total_layer_param_loads / total_layer_operations, int(total_layer_load_param_cycles), percent * total_layer_load_param_cycles / total_layer_cycles, scale * total_energy_param_read, percent * total_energy_param_read / layer_energy_total, int(total_layer_data_stores), percent * total_layer_data_stores / total_layer_operations, int(total_layer_store_data_cycles), percent * total_layer_store_data_cycles / total_layer_cycles, scale * total_energy_data_write, percent * total_energy_data_write / layer_energy_total, int(total_layer_multiplies), percent * total_layer_multiplies / total_layer_operations, int(total_layer_multiplication_cycles), percent * total_layer_multiplication_cycles / total_layer_cycles, scale * total_energy_multiplier, percent * total_energy_multiplier / layer_energy_total, int(total_layer_additions), percent * total_layer_additions / total_layer_operations, int(total_layer_addition_cycles), percent * total_layer_addition_cycles / total_layer_cycles, scale * total_energy_adder, percent * total_energy_adder / layer_energy_total, int(total_layer_divisions), percent * total_layer_divisions / total_layer_operations, int(total_layer_division_cycles), percent * total_layer_division_cycles / total_layer_cycles, scale * total_energy_divider, percent * total_energy_divider / layer_energy_total, int(total_layer_activations), percent * total_layer_activations / total_layer_operations, int(total_layer_activation_cycles), percent * total_layer_activation_cycles / total_layer_cycles, scale * total_energy_activation, percent * total_energy_activation / layer_energy_total, scale * layer_energy_total, percent * layer_energy_total / total_energy_))
+            f_out.writelines('Layer\t{0:3d}\t({1:})\t{2:12d}\t{3:3.6f}\t[%],\t{4:12d}\t{5:3.6f}\t[%],\t{6:3.6f}\t{7:3.6f}\t[%],\t{8:12d}\t{9:3.6f}\t[%],\t{10:12d}\t{11:3.6f}\t[%],\t{12:3.6f}\t{13:3.6f}\t[%],\t{14:12d}\t{15:3.6f}\t[%],\t{16:12d}\t{17:3.6f}\t[%],\t{18:3.6f}\t{19:3.6f}\t[%],\t{20:12d}\t{21:3.6f}\t[%],\t{22:12d}\t{23:3.6f}\t[%],\t{24:3.6f}\t{25:3.6f}\t[%],\t{26:12d}\t{27:3.6f}\t[%],\t{28:12d}\t{29:3.6f}\t[%],\t{30:3.6f}\t{31:3.6f}\t[%],\t{32:12d}\t{33:3.6f}\t[%],\t{34:12d}\t{35:3.6f}\t[%],\t{36:3.6f}\t{37:3.6f}\t[%],\t{38:12d}\t{39:3.6f}\t[%],\t{40:12d}\t{41:3.6f}\t[%],\t{42:3.6f}\t{43:3.6f}\t[%],\t{44:3.6f}\t{45:3.6f}\t[%]\n'.format(layer_id, record_layer_type_[layer_id][:11], int(total_layer_data_loads), percent * total_layer_data_loads / total_layer_operations, int(total_layer_load_data_cycles), percent * total_layer_load_data_cycles / total_layer_cycles, scale * total_energy_data_read, percent * total_energy_data_read / layer_energy_total, int(total_layer_param_loads), percent * total_layer_param_loads / total_layer_operations, int(total_layer_load_param_cycles), percent * total_layer_load_param_cycles / total_layer_cycles, scale * total_energy_param_read, percent * total_energy_param_read / layer_energy_total, int(total_layer_data_stores), percent * total_layer_data_stores / total_layer_operations, int(total_layer_store_data_cycles), percent * total_layer_store_data_cycles / total_layer_cycles, scale * total_energy_data_write, percent * total_energy_data_write / layer_energy_total, int(total_layer_multiplies), percent * total_layer_multiplies / total_layer_operations, int(total_layer_multiplication_cycles), percent * total_layer_multiplication_cycles / total_layer_cycles, scale * total_energy_multiplier, percent * total_energy_multiplier / layer_energy_total, int(total_layer_additions), percent * total_layer_additions / total_layer_operations, int(total_layer_addition_cycles), percent * total_layer_addition_cycles / total_layer_cycles, scale * total_energy_adder, percent * total_energy_adder / layer_energy_total, int(total_layer_divisions), percent * total_layer_divisions / total_layer_operations, int(total_layer_division_cycles), percent * total_layer_division_cycles / total_layer_cycles, scale * total_energy_divider, percent * total_energy_divider / layer_energy_total, int(total_layer_activations), percent * total_layer_activations / total_layer_operations, int(total_layer_activation_cycles), percent * total_layer_activation_cycles / total_layer_cycles, scale * total_energy_activation, percent * total_energy_activation / layer_energy_total, scale * layer_energy_total, percent * layer_energy_total / total_energy_, total_layer_cycles))
 
     f_out.close()

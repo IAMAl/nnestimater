@@ -30,8 +30,6 @@ def forward_conv(args, f_out, config_hard, config_prev_layer, config_pres_layer,
     output_size     = 1
     window_size     = 1
 
-    aspect_ratio    = 1.0
-
     for no_dim in range(dim):
         input_length[no_dim]    = int(config_pres_layer['input_dim'+str(no_dim)])
 
@@ -42,8 +40,6 @@ def forward_conv(args, f_out, config_hard, config_prev_layer, config_pres_layer,
         input_size              *= frame_length[no_dim]
         output_size             *= output_length[no_dim]
         window_size             *= window_length[no_dim]
-
-        aspect_ratio            *= numpy.ceil(float(frame_length[no_dim] / stride[no_dim]))
 
     #Sequential 2D-Convolution (per Channel)
     number_of_parallel_kernels   = int(config_pres_layer['number_of_parallel_kernels'])
@@ -68,7 +64,7 @@ def forward_conv(args, f_out, config_hard, config_prev_layer, config_pres_layer,
     total_number_of_params                  = window_size + dim - 1 #Plus Bias
 
     #Number of Parameters (including Biases)
-    number_of_parameters                    = number_of_parallel_kernels * (window_size * aspect_ratio + dim - 1)
+    number_of_parameters                    = number_of_parallel_kernels * (window_size + dim - 1)
 
     #Number of Input Parameters
     number_of_parallel_loads                = int(config_hard['number_of_parallel_loads'])

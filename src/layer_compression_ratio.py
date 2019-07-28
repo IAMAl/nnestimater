@@ -3,7 +3,6 @@ def layer_compression_ratio(args, config_pres_layer):
     
     if ((args.zero_skipping_operation == 'on') & ( 'zero_ratio' in config_pres_layer )):
         zero_ratio_op                   = float(config_pres_layer['zero_ratio'])
-        print(zero_ratio_op)
     else: 
         zero_ratio_op                   = 0.0
 
