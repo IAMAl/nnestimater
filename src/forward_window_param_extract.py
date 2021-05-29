@@ -23,6 +23,11 @@ def forward_window_param_extract(config_pres_layer, dim):
     if ((layer_type == 'convolution') | (layer_type == 'max_pooling')):
         feature_size    = conv_size_fd.conv_size_calc(input_size, kernel_size, padding_size1, padding_size2, delite_size, stride_size)
     else:
-        feature_size    = conv_size_tr.conv_size_calc_transposed(input_size, kernel_size, padding_size1, padding_size2, delite_size, stride_size)        
-    
-    return feature_size, kernel_size, delite_size, stride_size, padding_size1, padding_size2
+        feature_size    = conv_size_tr.conv_size_calc_transposed(input_size, kernel_size, padding_size1, padding_size2, delite_size, stride_size)
+
+    return feature_size, \
+            kernel_size, \
+            delite_size, \
+            stride_size, \
+            padding_size1, \
+            padding_size2

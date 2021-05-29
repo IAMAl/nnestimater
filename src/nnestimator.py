@@ -49,6 +49,24 @@ if __name__ == "__main__":
 
     f_out, record_layer_type, active_func_type, statics_total_number_of_loads_data, statics_total_number_of_loads_param, statics_total_number_of_stores_data,statics_total_number_of_inputs, statics_total_number_of_params, statics_total_number_of_outputs, statics_total_number_of_multiplies,statics_total_number_of_additions, statics_total_number_of_divisions, statics_total_number_of_activations = calc.calc_layers(args, config_layers, config_hard)
 
-    stat.statistics(process, pipeline, config_layers, config_hard, f_out, record_layer_type, active_func_type, statics_total_number_of_loads_data, statics_total_number_of_loads_param, statics_total_number_of_stores_data,statics_total_number_of_inputs, statics_total_number_of_params, statics_total_number_of_outputs, statics_total_number_of_multiplies, statics_total_number_of_additions, statics_total_number_of_divisions, statics_total_number_of_activations)
+    stat.statistics(\
+        process, \
+        pipeline, \
+        config_layers, \
+        config_hard, \
+        f_out, \
+        record_layer_type, \
+        active_func_type, \
+        statics_total_number_of_loads_data, \
+        statics_total_number_of_loads_param, \
+        statics_total_number_of_stores_data, \
+        statics_total_number_of_inputs, \
+        statics_total_number_of_params, \
+        statics_total_number_of_outputs, \
+        statics_total_number_of_multiplies, \
+        statics_total_number_of_additions, \
+        statics_total_number_of_divisions, \
+        statics_total_number_of_activations\
+        )
 
     print("End   Estimation.")

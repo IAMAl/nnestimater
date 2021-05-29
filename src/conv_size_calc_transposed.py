@@ -2,8 +2,15 @@
 import numpy
 
 
-def conv_size_calc_transposed(out_base_size, kernel_size, padding_size1, padding_size2, delite_size, stride_size):
-    
+def conv_size_calc_transposed(\
+    out_base_size, \
+    kernel_size, \
+    padding_size1, \
+    padding_size2, \
+    delite_size, \
+    stride_size\
+    ):
+
     if stride_size <= 0:
         print('ERROR: Stride Value is equal to or less than Zero.')
         stride_size     = 1

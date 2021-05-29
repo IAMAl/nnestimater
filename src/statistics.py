@@ -5,7 +5,25 @@ import statics_store_cycles_sequential      as statics_st_cycles
 import statics_activation_cycles_sequential as statics_act_cycles
 
 
-def statistics(process, pipeline, config_layers, config_hard, f_out, record_layer_type, active_func_type, statics_total_number_of_loads_data, statics_total_number_of_loads_param, statics_total_number_of_stores_data, statics_total_number_of_inputs, statics_total_number_of_params, statics_total_number_of_outputs, statics_total_number_of_multiplies, statics_total_number_of_additions, statics_total_number_of_divisions, statics_total_number_of_activations):
+def statistics(\
+    process, \
+    pipeline, \
+    config_layers, \
+    config_hard, \
+    f_out, \
+    record_layer_type, \
+    active_func_type, \
+    statics_total_number_of_loads_data, \
+    statics_total_number_of_loads_param, \
+    statics_total_number_of_stores_data, \
+    statics_total_number_of_inputs, \
+    statics_total_number_of_params, \
+    statics_total_number_of_outputs, \
+    statics_total_number_of_multiplies, \
+    statics_total_number_of_additions, \
+    statics_total_number_of_divisions, \
+    statics_total_number_of_activations\
+    ):
 
     #Counters
     number_of_layers                    = len(config_layers)
@@ -123,7 +141,7 @@ def statistics(process, pipeline, config_layers, config_hard, f_out, record_laye
     f_out.writelines("\n\n\n2.Statistics for Layers\n")
 
     for layer_id in range(number_of_layers):
-        
+
         if layer_id > 0 :
             config_prev_layer                   = config_layers[layer_id - 1]
             number_of_parallel_in               = int(config_prev_layer['number_of_parallel_kernels'])
@@ -145,7 +163,7 @@ def statistics(process, pipeline, config_layers, config_hard, f_out, record_laye
 
             number_of_additions                 = statics_total_number_of_additions[layer_id]
             total_number_of_additions           += number_of_additions
-            
+
             number_of_divisions                 = statics_total_number_of_divisions[layer_id]
             total_number_of_divisions           += number_of_divisions
 
@@ -239,7 +257,7 @@ def statistics(process, pipeline, config_layers, config_hard, f_out, record_laye
             f_out.writelines("Activation                : {0:21d} [cycles]\n".format(int(total_activation_sequential_cycles)))
             f_out.writelines("Arithmetic                : {0:21d} [cycles]\n".format(int(total_layer_compute_cycles)))
             f_out.writelines("Total                     : {0:21d} [cycles]\n\n".format(int(total_layer_cycles)))
-                
+
             f_out.writelines('Execution Cycles Breakdown\n')
             f_out.writelines("Data Load                 : {: 3.18f}\t[%]\n".format(ratio_load_data  * 100.0))
             f_out.writelines("Param Load                : {: 3.18f}\t[%]\n".format(ratio_load_param * 100.0))
@@ -334,7 +352,7 @@ def statistics(process, pipeline, config_layers, config_hard, f_out, record_laye
 
     #Total Statics
     f_out.writelines("3.Total Statictics\n")
-    
+
     #Execution Time
     total_execution_time        = float(total_cycles) / float(execution_clock_frequency)
 
@@ -384,7 +402,7 @@ def statistics(process, pipeline, config_layers, config_hard, f_out, record_laye
     f_out.writelines("Arithmetics               : {: 3.18f}\t[ops/cycle]\n\n".format(total_number_of_arith_op / total_cycles))
 
     #Execution Cycle Breakdown
-    total_mem_operations        = (total_number_of_data_loads + total_number_of_param_loads) * (execution_clock_frequency / load_clock_frequency) + total_number_of_data_stores * (execution_clock_frequency / store_clock_frequency) 
+    total_mem_operations        = (total_number_of_data_loads + total_number_of_param_loads) * (execution_clock_frequency / load_clock_frequency) + total_number_of_data_stores * (execution_clock_frequency / store_clock_frequency)
 
     ratio_total_loads_data      = float(total_number_of_data_loads)     / float(total_cycles)
     ratio_total_loads_param     = float(total_number_of_param_loads)    / float(total_cycles)
@@ -510,11 +528,11 @@ def statistics(process, pipeline, config_layers, config_hard, f_out, record_laye
     f_out.writelines("ops            ratio,          cycles          ratio,          energy [pJ]    ratio,            ")
     f_out.writelines("ops            ratio,          cycles          ratio,          energy [pJ]    ratio,            ")
     f_out.writelines("ops            ratio,          cycles          ratio,          energy [pJ]    ratio,            ")
-    f_out.writelines("ops            ratio,          cycles          ratio,          energy [pJ]    ratio,            ")                     
-    f_out.writelines("ops            ratio,          cycles          ratio,          energy [pJ]    ratio,            ")                     
+    f_out.writelines("ops            ratio,          cycles          ratio,          energy [pJ]    ratio,            ")
+    f_out.writelines("ops            ratio,          cycles          ratio,          energy [pJ]    ratio,            ")
     f_out.writelines("ops            ratio,          cycles          ratio,          energy [pJ]    ratio,           energy [pJ]    ratio\n")
 
-    percent                         = 100.0      
+    percent                         = 100.0
     scale                           = 1000000000000.0
     total_energy_                   = 0.0
 
@@ -529,7 +547,7 @@ def statistics(process, pipeline, config_layers, config_hard, f_out, record_laye
             total_layer_param_loads                 = statics_total_number_of_loads_param[layer_id]
             total_layer_data_stores                 = statics_total_number_of_stores_data[layer_id]
             total_layer_multiplies                  = statics_total_number_of_multiplies[layer_id]
-            total_layer_additions                   = statics_total_number_of_additions[layer_id]      
+            total_layer_additions                   = statics_total_number_of_additions[layer_id]
             total_layer_divisions                   = statics_total_number_of_divisions[layer_id]
             total_layer_activations                 = statics_total_number_of_activations[layer_id]
             total_layer_operations                  = total_layer_data_loads + total_layer_param_loads + total_layer_data_stores + total_layer_multiplies + total_layer_additions + total_layer_divisions + total_layer_activations

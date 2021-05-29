@@ -7,7 +7,7 @@ import forward_fullconnect  as fwd_fconnect
 
 
 def calc_layers(args, config_layers, config_hard):
-    
+
     f_out = open(args.out_file_name, 'w')
 
     print("Start Layer Calculation.")
@@ -33,7 +33,7 @@ def calc_layers(args, config_layers, config_hard):
     number_of_pres_outputs              = 0
     number_of_prev_outputs              = 0
 
-    execution_type                      = config_hard['execution_type']     
+    execution_type                      = config_hard['execution_type']
 
     f_out.writelines("1.Network Topology\n")
 
@@ -72,7 +72,7 @@ def calc_layers(args, config_layers, config_hard):
                             dim                     = int(config_pres_layer['dimension'])
                             layer_type              = config_pres_layer['layer_type']
                             act_type                = config_pres_layer['activation_type']
-                            
+
                             # Cost Calculation Body
                             f_out.writelines("\n" + layer_type + " Layer" + "\n")
 
@@ -81,22 +81,62 @@ def calc_layers(args, config_layers, config_hard):
 
                             #Convolution
                             if ((layer_type == 'convolution') | (layer_type == 'transposed_convolution')):
-                                statics_total_number_of_loads_data[layer_id], statics_total_number_of_loads_param[layer_id], statics_total_number_of_stores_data[layer_id], statics_total_number_of_inputs[layer_id],statics_total_number_of_params[layer_id], statics_total_number_of_outputs[layer_id], statics_total_number_of_multiplies[layer_id], statics_total_number_of_additions[layer_id], statics_total_number_of_divisions[layer_id], statics_total_number_of_activations[layer_id], output_length   = fwd_conv.forward_conv(args, f_out, config_hard, config_prev_layer, config_pres_layer, dim, output_length)
+                                statics_total_number_of_loads_data[layer_id], \
+                                    statics_total_number_of_loads_param[layer_id], \
+                                    statics_total_number_of_stores_data[layer_id], \
+                                    statics_total_number_of_inputs[layer_id], \
+                                    statics_total_number_of_params[layer_id], \
+                                    statics_total_number_of_outputs[layer_id], \
+                                    statics_total_number_of_multiplies[layer_id], \
+                                    statics_total_number_of_additions[layer_id], \
+                                    statics_total_number_of_divisions[layer_id], \
+                                    statics_total_number_of_activations[layer_id], \
+                                    output_length   = fwd_conv.forward_conv(args, f_out, config_hard, config_prev_layer, config_pres_layer, dim, output_length)
 
                             #Pooling
                             elif (layer_type == 'max_pooling'):
-                                statics_total_number_of_loads_data[layer_id], statics_total_number_of_loads_param[layer_id], statics_total_number_of_stores_data[layer_id], statics_total_number_of_inputs[layer_id],statics_total_number_of_params[layer_id], statics_total_number_of_outputs[layer_id], statics_total_number_of_multiplies[layer_id], statics_total_number_of_additions[layer_id], statics_total_number_of_divisions[layer_id], statics_total_number_of_activations[layer_id], output_length   = fwd_pool.forward_pool(args, f_out, config_hard, config_prev_layer, config_pres_layer, dim, output_length)
+                                statics_total_number_of_loads_data[layer_id], \
+                                    statics_total_number_of_loads_param[layer_id], \
+                                    statics_total_number_of_stores_data[layer_id], \
+                                    statics_total_number_of_inputs[layer_id], \
+                                    statics_total_number_of_params[layer_id], \
+                                    statics_total_number_of_outputs[layer_id], \
+                                    statics_total_number_of_multiplies[layer_id], \
+                                    statics_total_number_of_additions[layer_id], \
+                                    statics_total_number_of_divisions[layer_id], \
+                                    statics_total_number_of_activations[layer_id], \
+                                    output_length   = fwd_pool.forward_pool(args, f_out, config_hard, config_prev_layer, config_pres_layer, dim, output_length)
 
                             #Batch Normalization
                             elif (layer_type == 'batch_normalization'):
-                                statics_total_number_of_loads_data[layer_id], statics_total_number_of_loads_param[layer_id], statics_total_number_of_stores_data[layer_id], statics_total_number_of_inputs[layer_id],statics_total_number_of_params[layer_id], statics_total_number_of_outputs[layer_id], statics_total_number_of_multiplies[layer_id], statics_total_number_of_additions[layer_id], statics_total_number_of_divisions[layer_id], statics_total_number_of_activations[layer_id], output_length   = fwd_bnorm.forward_batchnorm(args, f_out, config_hard, config_prev_layer, config_pres_layer, dim, output_length)
-                            
+                                statics_total_number_of_loads_data[layer_id], \
+                                    statics_total_number_of_loads_param[layer_id], \
+                                    statics_total_number_of_stores_data[layer_id], \
+                                    statics_total_number_of_inputs[layer_id], \
+                                    statics_total_number_of_params[layer_id], \
+                                    statics_total_number_of_outputs[layer_id], \
+                                    statics_total_number_of_multiplies[layer_id], \
+                                    statics_total_number_of_additions[layer_id], \
+                                    statics_total_number_of_divisions[layer_id], \
+                                    statics_total_number_of_activations[layer_id], \
+                                    output_length   = fwd_bnorm.forward_batchnorm(args, f_out, config_hard, config_prev_layer, config_pres_layer, dim, output_length)
+
                             #Full Connection
                             elif (layer_type == 'full_connection'):
-                                statics_total_number_of_loads_data[layer_id], statics_total_number_of_loads_param[layer_id], statics_total_number_of_stores_data[layer_id], statics_total_number_of_inputs[layer_id],statics_total_number_of_params[layer_id], statics_total_number_of_outputs[layer_id], statics_total_number_of_multiplies[layer_id], statics_total_number_of_additions[layer_id],statics_total_number_of_divisions[layer_id], statics_total_number_of_activations[layer_id], output_length   = fwd_fconnect.forward_fullconnect(args, f_out, config_hard, config_prev_layer, config_pres_layer, dim, output_length)
+                                statics_total_number_of_loads_data[layer_id], \
+                                    statics_total_number_of_loads_param[layer_id], \
+                                    statics_total_number_of_stores_data[layer_id], \
+                                    statics_total_number_of_inputs[layer_id], \
+                                    statics_total_number_of_params[layer_id], \
+                                    statics_total_number_of_outputs[layer_id], \
+                                    statics_total_number_of_multiplies[layer_id], \
+                                    statics_total_number_of_additions[layer_id], \
+                                    statics_total_number_of_divisions[layer_id], \
+                                    statics_total_number_of_activations[layer_id], \
+                                    output_length   = fwd_fconnect.forward_fullconnect(args, f_out, config_hard, config_prev_layer, config_pres_layer, dim, output_length)
                             else:
                                 print("WARNING: Not Defined Layer {} is used.".format(layer_type))
-                            
+
                             break
 
                 #Collect Statics
@@ -105,4 +145,16 @@ def calc_layers(args, config_layers, config_hard):
 
     print("End   Layer Calculation.")
 
-    return f_out, record_layer_type, active_func_type, statics_total_number_of_loads_data, statics_total_number_of_loads_param, statics_total_number_of_stores_data,statics_total_number_of_inputs, statics_total_number_of_params, statics_total_number_of_outputs, statics_total_number_of_multiplies,statics_total_number_of_additions, statics_total_number_of_divisions, statics_total_number_of_activations
+    return f_out, \
+            record_layer_type, \
+            active_func_type, \
+            statics_total_number_of_loads_data, \
+            statics_total_number_of_loads_param, \
+            statics_total_number_of_stores_data, \
+            statics_total_number_of_inputs, \
+            statics_total_number_of_params, \
+            statics_total_number_of_outputs, \
+            statics_total_number_of_multiplies, \
+            statics_total_number_of_additions, \
+            statics_total_number_of_divisions, \
+            KXstatics_total_number_of_activations

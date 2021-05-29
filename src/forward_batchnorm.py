@@ -4,7 +4,15 @@ import layer_compression_ratio      as layer_comp_ratio
 import forward_window_param_extract as fwd_win_extract
 
 
-def forward_batchnorm(args, f_out, config_hard, config_prev_layer, config_pres_layer, dim, input_length_): 
+def forward_batchnorm(\
+    args, \
+    f_out, \
+    config_hard, \
+    config_prev_layer, \
+    config_pres_layer, \
+    dim, \
+    input_length_\
+    ):
 
     #dwidth_of_pres_inputs   = int(config_pres_layer['dwidth_of_inputs'])
     #dwidth_of_pres_outputs  = int(config_pres_layer['dwidth_of_outputs'])
@@ -12,9 +20,15 @@ def forward_batchnorm(args, f_out, config_hard, config_prev_layer, config_pres_l
     #dwidth_of_prev_outputs  = int(config_prev_layer['dwidth_of_outputs'])
 
     #Compression Ratio Extraction
-    zero_ratio_op, zero_ratio_ma, compress_ratio_act_prev, compress_ratio_par_prev = layer_comp_ratio.layer_compression_ratio(args, config_prev_layer)
+    zero_ratio_op, \
+        zero_ratio_ma, \
+        compress_ratio_act_prev, \
+        compress_ratio_par_prev = layer_comp_ratio.layer_compression_ratio(args, config_prev_layer)
 
-    zero_ratio_op, zero_ratio_ma, compress_ratio_act_pres, compress_ratio_par_pres = layer_comp_ratio.layer_compression_ratio(args, config_pres_layer)
+    zero_ratio_op, \
+        zero_ratio_ma, \
+        compress_ratio_act_pres, \
+        compress_ratio_par_pres = layer_comp_ratio.layer_compression_ratio(args, config_pres_layer)
 
     input_length    = numpy.zeros(dim)
     output_length   = numpy.zeros(dim)
@@ -36,7 +50,7 @@ def forward_batchnorm(args, f_out, config_hard, config_prev_layer, config_pres_l
         input_length[no_dim]    = int(config_pres_layer['input_dim'+str(no_dim)])
 
         output_length[no_dim], window_length[no_dim], delite[no_dim], stride[no_dim], padding1[no_dim], padding2[no_dim]        = fwd_win_extract.forward_window_param_extract(config_pres_layer, no_dim)
-        
+
         output_length[no_dim]   = int(config_pres_layer['input_dim'+str(no_dim)])
         frame_length[no_dim]    = int(config_prev_layer['input_dim'+str(no_dim)])
 
@@ -54,41 +68,41 @@ def forward_batchnorm(args, f_out, config_hard, config_prev_layer, config_pres_l
     total_number_of_activations = 0
 
     #Number of Input Data
-    total_number_of_inputs                  = input_size
+    total_number_of_inputs      = input_size
 
     #Number of Input Activations
-    number_of_loads_data                    = input_size
+    number_of_loads_data        = input_size
 
     #Number of Loads Activations
-    total_number_of_loads_data              = numpy.ceil((1 - compress_ratio_act_prev) * (1 - zero_ratio_ma) * number_of_loads_data)
+    total_number_of_loads_data  = numpy.ceil((1 - compress_ratio_act_prev) * (1 - zero_ratio_ma) * number_of_loads_data)
 
     #Number of Cycles for Loading Activations
     #total_load_sequential_cycles            = statics_load_cycles_sequential(config_hard,  total_number_of_loads_data)
 
     #Number of Input Parameters
-    number_of_parallel_loads                = int(config_hard['number_of_parallel_loads'])
-    total_number_of_params                  = 0
+    number_of_parallel_loads    = int(config_hard['number_of_parallel_loads'])
+    total_number_of_params      = 0
 
     #Number of Parameters (including Biases)
-    number_of_parameters                    = 0
+    number_of_parameters        = 0
 
     #Number of Input Parameters
-    number_of_loads_parameter               = numpy.ceil(float(number_of_parameters) / float(number_of_parallel_loads))
+    number_of_loads_parameter   = numpy.ceil(float(number_of_parameters) / float(number_of_parallel_loads))
 
     #Number of Loads Parameters
-    total_number_of_loads_param             = numpy.ceil((1 - compress_ratio_par_pres) * (1 - zero_ratio_ma) * number_of_loads_parameter)
+    total_number_of_loads_param = numpy.ceil((1 - compress_ratio_par_pres) * (1 - zero_ratio_ma) * number_of_loads_parameter)
 
     #Number of Cycles for Loading Parameters
     #total_load_param_sequential_cycles     = statics_load_cycles_sequential(config_hard, total_number_of_loads_parameter)
 
     #Number of Output Data
-    total_number_of_outputs                 = output_size
+    total_number_of_outputs     = output_size
 
     #Number of Output Activations
-    number_of_stores_data                   = output_size
+    number_of_stores_data       = output_size
 
     #Number of Stores Activations
-    total_number_of_stores_data             = numpy.ceil((1 - compress_ratio_act_pres) * (1 - zero_ratio_ma) * number_of_stores_data)
+    total_number_of_stores_data = numpy.ceil((1 - compress_ratio_act_pres) * (1 - zero_ratio_ma) * number_of_stores_data)
 
     #Number of Cycles for Activation Store
     #total_store_sequential_cycles           = statics_store_cycles_sequential(config_hard, number_of_stores_data)
@@ -120,4 +134,14 @@ def forward_batchnorm(args, f_out, config_hard, config_prev_layer, config_pres_l
     f_out.writelines("Total Params/Ch    :{0:22d}\n".format(int(total_number_of_params)))
     f_out.writelines("Total Outputs/Ch   :{0:22d}\n".format(int(total_number_of_outputs)))
 
-    return total_number_of_loads_data, total_number_of_loads_param, total_number_of_stores_data, total_number_of_inputs, total_number_of_params, total_number_of_outputs, total_number_of_multiplies, total_number_of_additions, total_number_of_divisions, total_number_of_activations, output_length
+    return total_number_of_loads_data, \
+                total_number_of_loads_param, \
+                total_number_of_stores_data, \
+                total_number_of_inputs, \
+                total_number_of_params, \
+                total_number_of_outputs, \
+                total_number_of_multiplies, \
+                total_number_of_additions, \
+                total_number_of_divisions, \
+                total_number_of_activations, \
+                output_length
