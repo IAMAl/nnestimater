@@ -151,4 +151,4 @@ def calc_layers(args, config_layers, config_hard):
 			statics_total_number_of_multiplies, \
 			statics_total_number_of_additions, \
 			statics_total_number_of_divisions, \
-			KXstatics_total_number_of_activations
+			statics_total_number_of_activations
